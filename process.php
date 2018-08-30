@@ -3,7 +3,6 @@
 $username = "";
 $password = "";
 //connect to db and select 
-# require_once('connectsys.php'); #db2 variable
  require_once('connectsys.php'); #db2 variable
 //query the database for user
 if(isset($_POST['log'])) {
