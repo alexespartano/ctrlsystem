@@ -12,71 +12,93 @@ if($div != "IT"){
 }
 }
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>Spare Parts</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-  <script script type="text/javascript" src="js/totop.js"></script>
-</head>
-<body background="img/Background-Picture-Html.jpg">
-<!--NAVMENU-->
-<div class="row" id="header">
-<nav class="navbar navbar-inverse" id="nav">
-        <button class="navbar-toggle" data-toggle="collapse" data-target="#a" id="toggle">
-            ☰
-        </button>
-        <div class="navbar-header">
-        	<a class=" navbar-brand"><img src="img/ibm-logo-png-transparent-background.png" width="50" height="20"></a>
-            <a href="main.php" class="navbar-brand" id="title" title="Desarrollado por Alejandro Romero Aldrete">CTRL SYSTEM</a>
-        </div>       
-        <div class="collapse navbar-collapse" id="a">
-            <ul class="nav navbar-nav">
-                <li><a href="main.php">HOME</a></li>
-                 <li class="dropdown">
-                    <a href="assets.php" class="dropdown-toggle" data-toggle="dropdown" role="button">CTRL OF ASSETS</a>
-                    <ul class="dropdown-menu">
-                    	<li><a href="assets.php">VIEW/MODIFY</a></li>
-                        <li><a href="peradd.php">ADD</a></li>
-                        <li><a href="perdel.php">DELETE</a></li>
-                    </ul>
-                </li>
-                 <li><a href="rec.php">RECORDS</a></li>
-                 <li><a href="service.php">SERVICES</a></li>
-                 <li><a href="mttos.php">CALENDAR OF MAINTENANCE</a></li>
-                <li><a href="tools.php">TOOLS</a></li>
-                <li><a href="TPMVIEWER.php">TPM</a></li>
-                 <li id="highlightbox"><a href="spareparts.php">SPARE PARTS</a></li>
-            </ul>
-            <ul class="nav navbar-nav pull-right">
-            	<li><a><i class="glyphicon glyphicon-user"></i><?php echo" " .strtoupper($_SESSION['username'])."  ";?></a></li>
-				<li><a href='logout.php'>Logout</a></li>	            </ul>    
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Spare Parts</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+    <script script type="text/javascript" src="js/filters2.js"></script>
+  <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+  <script>
+    IBMCore.common.util.config.set({
+       backtotop: {
+        enabled: true
+        }
+    });
+</script>   
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+<nav role="navigation" aria-label="NAV">
+        <div class="ibm-sitenav-menu-container">
+            <div class="ibm-sitenav-menu-name">
+                <div id="ibm-home"><a href="main.php">IBM®</a></div>
+                <a href="main.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
+            <div class="ibm-sitenav-menu-list">
+                <ul role="menubar">
+                    <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
+                        <ul role="menu" aria-label="Assets">
+                            <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
+                            <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
+                            <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a role="menuitem" href="rec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem"  href="service.php">Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>
+                    <!-- Optional right side CTA link -->
+                    <li class="ibm-sitenav-menu-item-right">
+                      <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
+                      <ul role="menu" style="margin-top: -15px;">
+                            <li role="presentation"><a role="menuitem"><?php echo" " .strtoupper($_SESSION['username'])."  ";?></a></li>
+                            <li role="presentation"><a role="menuitem" href="logout.php">Logout</a></li>
+                        </ul>
+                        
+                      </li>
+                </ul>
+            </div>
+             
         </div>
     </nav>
-</div><!--ENDNAVMENU-->
-<div id="menuoptions">
-	<div class="row">
-		<div class="col-sm-3"></div>
-		<div class="col-sm-2">
-			   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="#" onclick="javascript:add();"><button class="btn btn-default btn-lg" style="background-color:rgb(150,150,150);"><i class="glyphicon glyphicon-plus-sign"></i></button></a> &nbsp;&nbsp;&nbsp;<a href="#" onclick="javascript:del();"><button class="btn btn-default btn-lg" style="background-color:rgb(150,150,150);"><i class="glyphicon glyphicon-remove-sign"></i></button></a>
-		</div>
-    <div class="col-sm-5"></div>
-    <div class="col-sm-3">
-      <button onClick="window.location.reload()" id="submitbutton" title="Refresh all the web Page and update sql"><i class="glyphicon glyphicon-refresh"></i>REFRESH</button>
+        <!--filters-->      
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+          <div id="ibm-pcon">
+            <div id="ibm-content">
+              <div id="ibm-content-body">
+                <div id="ibm-content-main">                                   
+<div class="ibm-columns">
+    <div class="ibm-col-12-3"></div>  
+    <div class="ibm-col-12-4">
+     <span class="ibm-ind-link ibm-btn-row"><a class="ibm-add-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:add();">Add</a><a class="ibm-remove-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:del();">Remove</a>
+     </span>
     </div>
-	</div>
-  <!--CONTAINER-->
-<div class="row" id="tablecontainer">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-8">
-    <table class="table table-bordered" id="myTable">
-      <thead>
+    <div class="ibm-col-12-3">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="ibm-ind-link"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" onClick="window.location.reload()">Refresh</a></span>
+    </div>
+  </div>
+<!--ENDFILTERS-->
+<br>
+<br>
+<!--CONTENT-->
+<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
+    <div class="ibm-col-12-12">
+    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="x" cellspacing="0" cellpadding="0" border="0">
+            <thead>
         <tr>
            <th>MODIFY</th>
            <th>ITEM</th>
@@ -87,7 +109,7 @@ if($div != "IT"){
         </tr>
       </thead>
             <tbody>
-            <?php
+               <?php
             require_once('connectsys.php');
             
             $query = 'SELECT "ID", "ITEM", "QUANTITY", "MIN", "MAX", "PARTNUM", "LINK" FROM CTRLSYSTEM.SPARE ORDER BY "ITEM"';
@@ -99,24 +121,24 @@ if($div != "IT"){
                             exit;
                           }   
         while($row = db2_fetch_array($stmt)){
-        	
-        	if($row[2] <= $row[3]){
-        		//rojo
-        		echo '<tr bgcolor="#ff7f7f">';
-        	}else{
-        	if($row[2] >= $row[4]){
-        		//verde
-        		echo '<tr bgcolor="#88ff84">';
-        	}
-        	else{
-        		echo '<tr>';
-        	}
+          
+          if($row[2] <= $row[3]){
+            //rojo
+            echo '<tr class="ibm-bgcolor-red-10">';
+          }else{
+          if($row[2] > $row[4]){
+            //verde
+            echo '<tr class=" ibm-bgcolor-green-10">';
+          }
+          else{
+            echo '<tr>';
+          }
         }
-            echo '<td align="center"><a href="#" onclick="javascript:modi('.$row[0].');"><i class="glyphicon glyphicon-cog" style="font-size:1.5em;"></i></a></td><td align="center">' .
+            echo '<td align="center" class="ibm-ind-link"><a href="#" onclick="javascript:modi('.$row[0].');" class="ibm-setting-link"><i class="glyphicon glyphicon-cog" style="font-size:1.5em;"></i></a></td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
-            $row[4] . '</td><td align="center"><a href="https://'.$row[6].'">'.
+            $row[4] . '</td><td align="center"><a href="https://'.$row[6].'" target="_blank">'.
             $row[5] . '</a></td>';
             echo '</tr>';
             } 
@@ -125,24 +147,28 @@ if($div != "IT"){
             db2_close($db2);  
             
             ?>
-            <a href="#" class="scrollup"><p align="center"><button class="btn btn-default btn-lg" style="background-color:rgb(150,150,150);"><i class="glyphicon glyphicon-chevron-up"></i></button></p></a>
             </tbody>
-    </table>
-  </div>
+        </table>
+    </div>
+</div>
 
-</div><!--ENDCONATINER-->
 
+
+              </div>
+            </div>
+          </div>
+        </main>
 <script>
 function modi(id){
   win2 = window.open('sparemod.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450');  
 }
 function add(){
  win3 = window.open('spareadd.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450'); 
+ //agregar reinicio de la pagina principal
 }
 function del(){
  win3 = window.open('sparedel.php','Modifica_U','scrollbars=no,top=220,left=500,width=300,height=300'); 
 }
 </script>
-</div>
-</body>
+  </body>
 </html>
