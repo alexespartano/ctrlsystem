@@ -19,7 +19,7 @@ if($div != "IT"){
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Assets</title>
+    <title>Spare Parts</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -80,199 +80,68 @@ if($div != "IT"){
             <div id="ibm-content">
               <div id="ibm-content-body">
                 <div id="ibm-content-main">                                   
-<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
-    <div class="ibm-col-1-1 ibm-nospacing">
-        <form action="#" class="ibm-row-form">
-          <p>
-                    <input type="text" size="25" placeholder="Serial Number" id="Input1" autofocus>
-          &nbsp;&nbsp;&nbsp;
-                <select id="Input3" title="SEARCH FOR AREA">
-                <option value="" selected="selected">Area</option>
-   <?php
-        require_once('connectsys.php');
-        $query = "SELECT AREA FROM CTRLSYSTEM.INV GROUP BY AREA";
-        $stmt = db2_prepare($db2, $query);
-        if($stmt){
-           $result = db2_execute($stmt);
-           if (!$result) {
-                echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                exit;
-           }
-
-         while($row = db2_fetch_array($stmt)){
-                echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
-          }   
-         }
-    ?>
-</select>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-<select id="Input5" title="SEARCH FOR RESPONSIBLE">
-  <option value="" selected="selected">Responsible</option>
-  <?php
-                 require_once('connectsys.php');
-                    $query = "SELECT RESPONSIBLE FROM CTRLSYSTEM.INV GROUP BY RESPONSIBLE";
-                    $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result = db2_execute($stmt);
-                        if (!$result) {
-                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                            exit;
-                          }
-                while($row = db2_fetch_array($stmt)){
-                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
-                    }   
-                }
-            ?>
-</select>
-            </p>
-        </form>
+<div class="ibm-columns">
+    <div class="ibm-col-12-3"></div>  
+    <div class="ibm-col-12-4">
+     <span class="ibm-ind-link ibm-btn-row"><a class="ibm-add-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:add();">Add</a><a class="ibm-remove-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:del();">Remove</a>
+     </span>
     </div>
-    <div class="ibm-columns">
-    <div class="ibm-col-6-4  ibm-nospacing">
-        <form class="ibm-row-form">
-<select id="Input2" title="SEARCH FOR TYPE">
-  <option value="" selected="selected">Type</option>
-  <?php
-                    require_once('connectsys.php');
-                    $query = "SELECT TYPE FROM CTRLSYSTEM.INV GROUP BY TYPE";
-                    $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result = db2_execute($stmt);
-                        if (!$result) {
-                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                            exit;
-                          }
-                while($row = db2_fetch_array($stmt)){
-                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
-                    }   
-                }
-    ?>
-</select>
- &nbsp;&nbsp;&nbsp;&nbsp;
-<select  id="Input4" title="SEARCH FOR BRAND">
-  <option value="" selected="selected">Brand</option>
- <?php
-                    require_once('connectsys.php');
-                    $query = "SELECT BRAND FROM CTRLSYSTEM.INV GROUP BY BRAND";
-                    $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result = db2_execute($stmt);
-                        if (!$result) {
-                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                            exit;
-                          }
-
-                while($row = db2_fetch_array($stmt)){
-                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
-                    }   
-                }
-                    ?>
-</select>
- &nbsp;&nbsp;&nbsp;&nbsp;
-<select id="Input6" title="SEARCH FOR COST CENTER">
-  <option value="" selected="selected">Cost Center</option>
-    <?php
-                    require_once('connectsys.php');
-                    $query = 'SELECT "COST CENTER" FROM CTRLSYSTEM.INV GROUP BY "COST CENTER"';
-                    $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result = db2_execute($stmt);
-                        if (!$result) {
-                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                            exit;
-                          }
-                while($row = db2_fetch_array($stmt)){
-                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
-                    }   
-                }
-            ?>
-</select>
- &nbsp;&nbsp;&nbsp;&nbsp;
-<select id="Input7" title="SEARCH FOR STATUS AS=ASIGNADO, AL=ALMACEN">
-  <option value="" selected="selected">Status</option>
-   <option value="AS">Asignado</option>
-   <option value="AL">Almacenado</option>
-</select>
- &nbsp;&nbsp;&nbsp;&nbsp;
-<select id="Input8" title="SEARCH FOR ING RESPONSIBLE">
-  <option value="" selected="selected">Ing</option>
-  <option value="N/A">N/A</option>
-  <option value="ING1">ING1</option>
-  <option value="ING2">ING2</option>
-  <option value="ING3">ING3</option>
-</select>
-</div> 
-<div class="ibm-col-6-2  ibm-nospacing">
-    <span class="ibm-ind-link ibm-btn-row"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" href="#" onClick="window.location.reload()">Refresh</a><a class="ibm-search-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="filter2()">Search</a><a class="ibm-calculator-link ibm-btn-sec ibm-btn-blue-50">Items:<b id="con"></b></a></span>
-</div>
-</form>
-</div>
+    <div class="ibm-col-12-3">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="ibm-ind-link"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" onClick="window.location.reload()">Refresh</a></span>
+    </div>
+  </div>
 <!--ENDFILTERS-->
-<br>
-<br>
 <br>
 <br>
 <!--CONTENT-->
 <div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
-    <div class="ibm-col-1-1 ibm-nospacing">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center" id="myTable" data-scrollaxis="x" cellspacing="0" cellpadding="0" border="0" style="font-size: 9px;">
+    <div class="ibm-col-12-12">
+    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="x" cellspacing="0" cellpadding="0" border="0">
             <thead>
-                <tr>
-                    <th>MODIFY</th>
-                    <th>LOCATION</th>
-                    <th>AREA</th>
-                    <th>BRAND</th>
-                    <th>TYPE</th>
-                    <th>S/N</th>
-                    <th>MT</th>
-                    <th>MODEL</th>
-                    <th>RESPONSIBLE</th>
-                    <th>STATUS</th>
-                    <th>COMMENTS</th>
-                    <th>PHYSICAL INV.</th>
-                    <th>DATE OF PURCHASE</th>
-                    <th>DATE OF DEPRECIATION</th>
-                    <th>COST CENTER</th>
-                    <th>No.INVER.</th>
-                    <th>RFID S/N</th>
-                    <th>DATE RFID</th>
-                    <th>ING</th>
-                </tr>
-            </thead>
+        <tr>
+           <th>MODIFY</th>
+           <th>ITEM</th>
+           <th>QUANTITY</th>
+           <th>MIN</th>
+           <th>MAX</th>
+           <th>PART NUM.</th>
+        </tr>
+      </thead>
             <tbody>
-            <?php
+               <?php
             require_once('connectsys.php');
             
-            $query = 'SELECT "LOCATION", "AREA", "BRAND", "TYPE", "S/N", "MT", "MODEL", "RESPONSIBLE", "STAT", "COMMENTS", "PHYSICAL INV", "DATE OF PURCHASE", "DATE OF DEPRECIATION", "COST CENTER", "NUM INVER", "RFID S/N", "DATE RFID", "ING", "ID" FROM CTRLSYSTEM.INV ORDER BY "LOCATION"';
+            $query = 'SELECT "ID", "ITEM", "QUANTITY", "MIN", "MAX", "PARTNUM", "LINK" FROM CTRLSYSTEM.SPARE ORDER BY "ITEM"';
              $stmt = db2_prepare($db2, $query); 
-            if($stmt){     
+      if($stmt){     
                         $result = db2_execute($stmt);
                         if (!$result) {
                              echo "exec errormsg: " .db2_stmt_errormsg($stmt);
                             exit;
                           }   
         while($row = db2_fetch_array($stmt)){
-            echo '<tr><td align="center" class="ibm-ind-link"><a href="#" onclick="javascript:modi('.$row[18].');" class="ibm-setting-link"></a></td><td align="center">' .
-            $row[0] . '</td><td align="center">' .
+          
+          if($row[2] <= $row[3]){
+            //rojo
+            echo '<tr class="ibm-bgcolor-red-10">';
+          }else{
+          if($row[2] > $row[4]){
+            //verde
+            echo '<tr class=" ibm-bgcolor-green-10">';
+          }
+          else{
+            echo '<tr>';
+          }
+        }
+            echo '<td align="center" class="ibm-ind-link"><a href="#" onclick="javascript:modi('.$row[0].');" class="ibm-setting-link"><i class="glyphicon glyphicon-cog" style="font-size:1.5em;"></i></a></td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
-            $row[4] . '</td><td align="center">' .
-            $row[5] . '</td><td align="center">' .
-            $row[6] . '</td><td align="center">' .
-            $row[7] . '</td><td align="center">' .
-            $row[8] . '</td><td align="center">' .
-            $row[9] . '</td><td align="center">' .
-            $row[10] . '</td><td align="center">' .
-            $row[11] . '</td><td align="center">' .
-            $row[12] . '</td><td align="center">' .
-            $row[13] . '</td><td align="center">' .
-            $row[14] . '</td><td align="center">' .
-            $row[15] . '</td><td align="center">' .
-            $row[16] . '</td><td align="center">' .
-            $row[17] . '</td>';
+            $row[4] . '</td><td align="center"><a href="https://'.$row[6].'" target="_blank">'.
+            $row[5] . '</a></td>';
             echo '</tr>';
-            }   
+            } 
             echo '</table>';
         }
             db2_close($db2);  
@@ -291,7 +160,14 @@ if($div != "IT"){
         </main>
 <script>
 function modi(id){
-    win2 = window.open('mod.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450');    
+  win2 = window.open('sparemod.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450');  
+}
+function add(){
+ win3 = window.open('spareadd.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450'); 
+ //agregar reinicio de la pagina principal
+}
+function del(){
+ win3 = window.open('sparedel.php','Modifica_U','scrollbars=no,top=220,left=500,width=300,height=300'); 
 }
 </script>
   </body>
