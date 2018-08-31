@@ -280,47 +280,7 @@ if($div != "IT"){
         </table>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
+
 
 
               </div>
@@ -333,4 +293,18 @@ function modi(id){
 }
 </script>
   </body>
+    <br>
+  <br>
+  <br>
+<div class="ibm-columns">
+  <div class="ibm-col-12-9"></div>
+  <div class="ibm-col-12-3 ibm-right">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="ibm-ind-link"><a class="ibm-help-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-pdf-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
+  <div class="ibm-common-overlay  ibm-overlay-alt" data-widget="overlay" id="overlayExampleSmall">
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admi-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">gilbusta@mx1.ibm.com Gilberto Bustamante Sanchez</a></p>
+</div>
+</div>
+</div>
 </html>
