@@ -11,8 +11,6 @@ if($div != "IT"){
  header("location: index.php");
 }
 }
-$id = "null";
-$id=strtoupper($_GET['id']);
 ?>
 <!doctype html>
 <html>

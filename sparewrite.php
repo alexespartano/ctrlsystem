@@ -19,7 +19,7 @@ $quanti = strtoupper($_POST['quantity']);
 $min = strtoupper($_POST['minim']);
 $max = strtoupper($_POST['maxim']);
 $partnum = strtoupper($_POST['part']);
-$link = strtoupper($_POST['lin']);
+$link = $_POST['lin'];
 
       require_once('connectsys.php');
         $query = 'UPDATE CTRLSYSTEM.SPARE SET "ITEM"='."'$item'".',"QUANTITY"='."'$quanti'".',"MIN"='."'$min'".',"MAX"='."'$max'".',"PARTNUM"='."'$partnum'".',"LINK"='."'$link'".' WHERE "ID"='.$idw;

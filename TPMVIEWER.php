@@ -43,9 +43,14 @@ if($user == "GERENCIA"){
         enabled: true
         }
     });
+  IBMCore.common.util.config.set({
+       footer: { 
+          type: "alternate"
+          }
+    });
 </script>   
   </head>
-  <body id="ibm-com" class="ibm-type">
+  <body id="ibm-com" class="ibm-type ibm-background-white-10">
     <div id="ibm-top" class="ibm-landing-page">
 <nav role="navigation" aria-label="NAV">
         <div class="ibm-sitenav-menu-container">
@@ -97,14 +102,16 @@ if($user == "GERENCIA"){
             <div id="ibm-content">
               <div id="ibm-content-body">
                 <div id="ibm-content-main">
+                  <br>
                 <div class="ibm-columns">
-                  <div class="ibm-col-1-1 ibm-center ibm-pull-quote ibm-h2">
+                  <div class="ibm-col-1-1 ibm-center ibm-pull-quote ibm-h1">
                     <?php
           if($user != "GERENCIA"){
          echo '<p class="ibm-textcolor-blue-50"><span class="ibm-pullquote-open">“</span>Nota la Tabla del TPM Solo se Puede Eliminar los Viernes<span class="ibm-pullquote-close">“</span></p>';
           }
          ?>
                   </div>
+                  <br>
                   <div class="ibm-columns">
                     <div class="ibm-col-12-7"></div>
 <div class="ibm-col-12-4">
@@ -195,19 +202,29 @@ if($user == "GERENCIA"){
         </table>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 <!--ENDCONTENT-->
 </div>
               </div>
             </div>
         </div>
-
+          </div>
         </main>
+
   </body>
+  <br>
+  <br>
+  <br>
+<div class="ibm-columns">
+  <div class="ibm-col-12-9"></div>
+  <div class="ibm-col-12-3 ibm-right">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="ibm-ind-link"><a class="ibm-email-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-pdf-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
+  <div class="ibm-common-overlay  ibm-overlay-alt" data-widget="overlay" id="overlayExampleSmall">
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">gilbusta@mx1.ibm.com Gilberto Bustamante Sanchez</a></p>
+</div>
+</div>
+</div>
 </html>
 <script type="text/javascript">
 var ctx = document.getElementById("myChart").getContext('2d');
