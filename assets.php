@@ -49,7 +49,7 @@ if($div != "IT"){
                 <ul role="menubar">
                     <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
                         <ul role="menu" aria-label="Assets">
-                            <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
+                            <li role="presentation" class="ibm-highlight"><a role="menuitem" href="assets.php">View/Modify</a></li>
                             <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
                             <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
                         </ul>
@@ -196,7 +196,7 @@ if($div != "IT"){
  &nbsp;&nbsp;&nbsp;&nbsp;
 <select id="Input8" title="SEARCH FOR ING RESPONSIBLE">
   <option value="" selected="selected">Ing</option>
-  <option value="">N/A</option>
+  <option value="N/A">N/A</option>
   <option value="ING1">ING1</option>
   <option value="ING2">ING2</option>
   <option value="ING3">ING3</option>
