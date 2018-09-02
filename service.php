@@ -83,6 +83,10 @@ if($div != "IT"){
 <div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
   
 <div class="ibm-col-1-1 ibm-center ibm-pull-quote ibm-h1">
+  <br>
+  <br>
+  <br>
+  <br>
        <form action="service.php" method="post" class="ibm-row-form">
       <label for="ite">Serial Number for Maintenance</label>
       <input type="text" name="sn"  size="30" placeholder="Serial Number" class="form-control" style="max-width: 80%;" list="ser" id="ite">
@@ -239,6 +243,10 @@ if($div != "IT"){
     ?>
   </body>
     <br>
+  <br>
+  <br>    <br>
+  <br>
+  <br>    <br>
   <br>
   <br>
 <div class="ibm-columns">

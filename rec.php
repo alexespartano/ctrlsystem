@@ -54,7 +54,7 @@ if($div != "IT"){
                             <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
                         </ul>
                     </li>
-                    <li role="presentation"><a role="menuitem" href="rec.php">Records</a></li>
+                    <li role="presentation" class="ibm-highlight"><a role="menuitem" href="rec.php">Records</a></li>
                     <li role="presentation"><a role="menuitem"  href="service.php">Services</a></li>
                     <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
