@@ -74,6 +74,12 @@ if($div != "IT"){
              
         </div>
     </nav>
+    <!--Banner-->
+             <div id="ibm-leadspace-head" class="ibm-alternate" style="background: url(img/tecworld.jpg) center / cover no-repeat;">
+           <div id="ibm-leadspace-body" class="ibm-padding-top-2  ibm-padding-bottom-r2 ibm-alternate-background">
+           </div>
+         </div>
+         <!--endBanner-->
         <!--filters-->      
         <main role="main" aria-labelledby="ibm-pagetitle-h1">
           <div id="ibm-pcon">
@@ -83,8 +89,6 @@ if($div != "IT"){
 <div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
   
 <div class="ibm-col-1-1 ibm-center ibm-pull-quote ibm-h1">
-  <br>
-  <br>
   <br>
   <br>
        <form action="service.php" method="post" class="ibm-row-form">

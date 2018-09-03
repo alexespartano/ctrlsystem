@@ -74,6 +74,10 @@ if($div != "IT"){
              
         </div>
     </nav>
+    <div id="ibm-leadspace-head" class="ibm-alternate" style="background: url(img/tools.jpg) center / cover no-repeat;">
+           <div id="ibm-leadspace-body" class="ibm-padding-top-2  ibm-padding-bottom-r2 ibm-alternate-background">
+           </div>
+         </div>
         <!--filters-->      
         <main role="main" aria-labelledby="ibm-pagetitle-h1">
           <div id="ibm-pcon">

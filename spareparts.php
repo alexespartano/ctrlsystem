@@ -97,7 +97,7 @@ if($div != "IT"){
 <!--CONTENT-->
 <div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
     <div class="ibm-col-12-12">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="x" cellspacing="0" cellpadding="0" border="0">
+    <table class="ibm-data-table ibm-grid ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="x" cellspacing="0" cellpadding="0" border="0">
             <thead>
         <tr>
            <th>MODIFY</th>
