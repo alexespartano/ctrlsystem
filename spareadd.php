@@ -12,69 +12,82 @@ if($div != "IT"){
 }
 }
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>ADD</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body background="img/Background-Picture-Html.jpg">
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
- 	<table class="table table-responsive table-condensed" id="modtable">
-			<thead>
-				<tr>
-                	<th colspan="2">MODIFIER</th>
-				</tr>
-			</thead>
-            <form action="sparewadd.php" method="post">
-            <tr>
-            	<td>
-                	<label>ITEM:</label><br>
-                    <input name="items">
-                </td>
-                <td>
-              		<label>QUANTITY:</label><br>
-                    <input name="quantity">
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>MIN:</label><br>
-                	<input name="minim">
-                </td>
-                <td>
-                	<label>MAX:</label><br>
-					    <input name="maxim">
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>PART NUMBER:</label><br>
-                    <input name="part">
-                </td>
-                <td>
-                	<label>LINK:</label><br>
-                    <input name="lin">
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<button type="submit" name="modi" id="subutton"><i class="glyphicon  glyphicon-save"></i></button>
-              	</td>
-            </tr>
-            </form>
-            </table>
- </div>
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Add Part's</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form action="sparewadd.php" method="post" class="ibm-row-form">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Add Part</p>
+            </div>
+        </div>          
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2">
+                <label for="it">Item:<span class="ibm-required">*</span></label>
+                    <input type="text" value="" size="10" name="items" id="it">
+                </div>
+                    <div class="ibm-col-6-2">
+                <label for="qua">Quantity:<span class="ibm-required">*</span></label>
+                    <input type="text" value="" size="10" name="quantity" id="qua">
+            </div>
+        </div>
+
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2">
+                <label for="mi">Min:<span class="ibm-required">*</span></label>
+                    <input type="text" value="" size="10" name="minim" id="mi">
+                </div>
+                    <div class="ibm-col-6-2">
+                <label for="ma">Max:<span class="ibm-required">*</span></label>
+                    <input type="text" value="" size="10" name="maxim" id="ma">
+            </div>
+        </div>
+
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2">
+                <label for="pn">Part Number:<span class="ibm-required">*</span></label>
+                    <input type="text" value="N/A" size="10" name="part" id="pn">
+                </div>
+                    <div class="ibm-col-6-2">
+                <label for="ln">Link:<span class="ibm-required">*</span></label>
+                    <input type="text" value="" size="10" name="lin" id="ln" placeholder="www.example.com">
+            </div>
+        </div>
+
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-save-link">Add</a></button>
+     </span>
+            </div>
+        </div> 
+
+
+    </form>       
+        </main>
+      </div>
+    </div>
+
+  </body>
 </html>

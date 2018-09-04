@@ -42,153 +42,50 @@ $num=0;
                           }
                }
 ?>
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>ADD</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Part Added</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
 
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form action="#" method="post" class="ibm-row-form">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Part Added</p>
+            </div>
+        </div>          
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-6">
+                <p class=" ibm-h1 ibm-center">Part Added on SparePart's</p>
+                </div>
+        </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+              <p class="ibm-ind-link"><a class="ibm-confirm-link ibm-btn-sec" href="javascript:close()">Close Window</a></p>
+     </span>
+            </div>
+        </div> 
+    </form>       
+        </main>
+      </div>
+    </div>
 
-<body background="img/Background-Picture-Html.jpg">
-
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
-  <table class="table table-responsive table-condensed" id="modtable">
-      <thead>
-        <tr>
-                  <th colspan="2">MODIFIER</th>
-        </tr>
-      </thead>
-            <form action="#" method="post">
-            <tr>
-              <td>
-                  <label>ITEM:
-                   <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "ITEM" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-             $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }   
-          ?></label>
-                </td>
-                <td>
-                  <label>QUANTITY:
-                    <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "QUANTITY" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-            $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-          ?></label>
-                </td>
-            </tr>
-            <tr>
-              <td>
-                  <label>MIN:
-                    <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "MIN" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-            $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-          ?></label>
-                </td>
-                <td>
-                  <label>MAX: <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "MAX" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-            $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-          ?></label>
-                </td>
-            </tr>
-            <tr>
-              <td>
-                  <label>PART NUMBER: <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "PARTNUM" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-            $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-          ?></label>
-                </td>
-                <td>
-                  <label>LINK: <?php 
-            require_once('connectsys.php');
-                  $query = 'SELECT "LINK" FROM CTRLSYSTEM.SPARE WHERE ID='.$num;
-            $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-          ?></label>
-                </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                  <a href="javascript:close()">Close Window</a>
-                </td>
-            </tr>
-            </form>
-            </table>
- </div>
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+  </body>
 </html>

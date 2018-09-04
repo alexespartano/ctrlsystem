@@ -142,7 +142,7 @@ if($div != "IT"){
                         }
             ?>
             </datalist>
-            <button type="button" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50">Search</button>
+            <button type="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50">Search</button>
     </form>
             </div>
         </div>
@@ -157,10 +157,10 @@ if($div != "IT"){
         </main>
         <script>
 function delrec(){
-  win1 = window.open('delrec.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=200');  
+  win1 = window.open('delrec.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=400');  
 }
 function delmfsrec(){
-  win2 = window.open('delmfsrec.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=200');  
+  win2 = window.open('delmfsrec.php','Modifica_U','scrollbars=no,top=220,left=500,width=580,height=400');  
 }
 </script>
   </body>
