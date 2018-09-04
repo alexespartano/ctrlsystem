@@ -85,9 +85,10 @@ if($div != "IT"){
     <div class="ibm-col-12-3"> </div>
     <div class="ibm-col-12-3"> 
       <br>
+      <div id="menuoptions">
       <label for="loc">Location:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="loc" list="LOCATION" name="LOCATION" title="Double click to display all current options" maxlength="20" autofocus>
+                    <input type="text" value="" size="40" id="loc" list="LOCATION" name="LOCATION" title="Double click to display all current options" maxlength="20" autofocus pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="LOCATION">
                     <?php
                     //query to generete all the options on the datalist
@@ -110,11 +111,13 @@ if($div != "IT"){
 
 
     </div>
+  </div>
      <div class="ibm-col-12-4">
 <br>
+
                 <label for="are">Area:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="are" list="AREA" name="AREA" title="Double click to display all current options" maxlength="15">
+                    <input type="text" value="" size="40" id="are" list="AREA" name="AREA" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="AREA">
                  <?php
                         //query to generete all the options on the datalist
@@ -145,7 +148,7 @@ if($div != "IT"){
       <br>
       <label for="bra">Brand:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="bra" list="BRAND" name="BRAND" title="Double click to display all current options" maxlength="15">
+                    <input type="text" value="" size="40" id="bra" list="BRAND" name="BRAND" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="BRAND">
                     <?php
                     //query to generete all the options on the datalist
@@ -171,7 +174,7 @@ if($div != "IT"){
 <br>
                 <label for="typ">Type:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="typ" list="TYPE" name="TYPE" title="Double click to display all current options" maxlength="12">
+                    <input type="text" value="" size="40" id="typ" list="TYPE" name="TYPE" title="Double click to display all current options" maxlength="12" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="TYPE">
                 <?php
                     //query to generete all the options on the datalist
@@ -201,7 +204,7 @@ if($div != "IT"){
       <br>
       <label for="ser">S/N:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="ser"  name="SERIAL" title="Double click to display all current options" maxlength="25">
+                    <input type="text" value="" size="40" id="ser"  name="SERIAL" title="Double click to display all current options" maxlength="25" pattern="[A-Z0-9--]{2,30}" required>
                    
                 </span>
 
@@ -211,7 +214,7 @@ if($div != "IT"){
 <br>
                 <label for="typ">Model:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="typ" list="MODEL" name="MODEL" title="Double click to display all current options" maxlength="12">
+                    <input type="text" value="" size="40" id="typ" list="MODEL" name="MODEL" title="Double click to display all current options" maxlength="12" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="MODEL">
                 <?php
                     //query to generete all the options on the datalist
@@ -244,7 +247,7 @@ if($div != "IT"){
       <br>
       <label for="mt">MT:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="mt" list="MT" name="MT" title="Double click to display all current options" maxlength="10">
+                    <input type="text" value="" size="40" id="mt" list="MT" name="MT" title="Double click to display all current options" maxlength="10" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="MT">
                     <?php
                     //query to generete all the options on the datalist
@@ -270,7 +273,7 @@ if($div != "IT"){
       <br>
                 <label for="res">Responsible:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="res" list="RESPONSIBLE" name="RESPONSIBLE" title="Double click to display all current options" maxlength="15">
+                    <input type="text" value="" size="40" id="res" list="RESPONSIBLE" name="RESPONSIBLE" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="TYPE">
               <?php
                     //query to generete all the options on the datalist
@@ -303,8 +306,12 @@ if($div != "IT"){
       <br>
       <label for="sta">Status<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="sta"  name="STAT" title="Double click to display all current options" maxlength="10">
-                    <datalist id="MT">
+              
+                   <select  id="STAT" title="Status" size="25" required name="STAT">
+                   <option SIZE="25" value="" selected="selected">N/A</option>
+                    
+
+                  
                      <?php
                         //query to generete all the options on the datalist
                         require_once('connectsys.php');
@@ -320,7 +327,8 @@ if($div != "IT"){
                         }   
                     }
                     ?>
-            </datalist>
+         
+          </select>
                 </span>
 
 
@@ -329,55 +337,14 @@ if($div != "IT"){
       <br>
                 <label for="com">Comments:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="com" name="COMMENTS" title="Double click to display all current options" maxlength="28">
+                    <input type="text" value="" size="40" id="com" name="COMMENT" title="Double click to display all current options" maxlength="28">
                    
                 </span>
        
      </div>
    </div>
 
-<!--columna 6-->
-<br>
- <div class="ibm columns">
-    <div class="ibm-col-12-3"> </div>
-    <div class="ibm-col-12-3"> 
-      <br>
-      <label for="bra">Inversion No:<span class="ibm-required">*</span></label>
-                <span>
-                    <input type="text" value="" size="40" id="bra" list="INVERNUM" name="INVERNUM" title="Double click to display all current options" maxlength="15">
-  
-                  
-            </datalist>
-                </span>
 
-
-    </div>
-     <div class="ibm-col-12-4">
-<br>
-                <label for="typ">Type:<span class="ibm-required">*</span></label>
-                <span>
-                    <input type="text" value="" size="40" id="typ" list="TYPE" name="TYPE" title="Double click to display all current options" maxlength="12">
-                    <datalist id="TYPE">
-                <?php
-                    //query to generete all the options on the datalist
-                    require_once('connectsys.php');
-                    $query = 'SELECT "TYPE" FROM CTRLSYSTEM.INV GROUP BY "TYPE"';
-                    $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result=db2_execute($stmt);
-                        if(!$result){
-                            echo "Error Messange".db2_stmt_errormsg($stmt);
-                        }        
-                while($row =db2_fetch_array($stmt)){
-                    echo '<option value="'. $row[0] .'">';
-                    }   
-                }
-                    ?>
-            </datalist>
-                </span>
-       
-     </div>
-   </div>
 
 <!--columna 6-->
 <br>
@@ -386,14 +353,9 @@ if($div != "IT"){
     <div class="ibm-col-12-3"> 
       <br>
       
-
-
-
-
-
       <label for="pud">Purchase Date:<span class="ibm-required" class=" ibm-date-time">*</span></label>
                 <span>
-                    <input type="text" value="<?php echo date("j-n-Y");?>" size="40" id="pud"  name="PUDATE">
+                    <input type="text" value="<?php echo date("j-n-Y");?>" size="40" id="pud"  name="PUDATE" required>
                     <datalist id="txtfecha">
                     
             </datalist>
@@ -405,7 +367,7 @@ if($div != "IT"){
 <br>
                 <label for="cost">Cost Center:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="cost" list="COSTCENTER" name="COSTCENTER" title="Double click to display all current options" maxlength="12">
+                    <input type="text" value="" size="40" id="cost" list="COSTCENTER" name="COSTCENTER" title="Double click to display all current options" maxlength="12" required>
                     <datalist id="COST CENTER">
               <?php
                     //query to generete all the options on the datalist
@@ -423,8 +385,6 @@ if($div != "IT"){
                 }
                     ?>
                     </datalist>
-                    <br>
-            </datalist>
                 </span>
        
      </div>
@@ -439,9 +399,7 @@ if($div != "IT"){
       <br>
       <label for="in">Inversion No:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="in" name="INVERNUM" title="Double click to display all current options" maxlength="15">
-                                       
-            </datalist>
+                    <input type="text" value="" size="40" id="in" name="INVERNUM" title="Double click to display all current options" maxlength="15" required>
                 </span>
 
 
@@ -450,8 +408,12 @@ if($div != "IT"){
 <br>
                 <label for="in">ING:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="in" list="ING" name="ING" title="Double click to display all current options" >
-                    <datalist id="ING">
+
+
+                    <select  id="ING" title="Status" size="25" name="ING" required>
+                   <option SIZE="25" value="" selected="selected">N/A</option>
+
+                   
                 <?php
                         //query to generete all the options on the datalist
                         require_once('connectsys.php');
@@ -467,7 +429,8 @@ if($div != "IT"){
                         }   
                     }
                     ?>
-            </datalist>
+        
+          </select>
                 </span>
        
      </div>
@@ -479,32 +442,40 @@ if($div != "IT"){
     <div class="ibm-col-12-3"> </div>
     <div class="ibm-col-12-3"> 
       <br>
-      <label for="mtt">Matto Date:<span class="ibm-required">*</span></label>
+      <label for="mtt">Matto Date mm/dd/yy:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="mtt"  name="FECHAMTTO" min="2000-01-01" max="3000-12-31">
+                    <input type="text" value="" size="40" id="mtt"  name="FECHAMTTO" min="2000-01-01" max="3000-12-31"  required>
                     <datalist id="FECHAMTTO">
                  
             </datalist>
                 </span>
-
-
     </div>
      <div class="ibm-col-12-4">
-<br>
+      <br>
+
                 <label for="rf">RFID S/N:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="rf" list="RFIDSN" name="RFIDSN" title="Double click to display all current options" maxlength="12">
+                    <input type="text" value="" size="40" id="rf" list="RFIDSN" name="RFIDSN" title="Double click to display all current options" maxlength="12" pattern="[A-Z0-9--]{2,30}" required>
                     <datalist id="RFIDSN">
              
             </datalist>
                 </span>
-       
      </div>
    </div>
 
+    <div class="ibm columns">
+    <div class="ibm-col-12-3"> </div>
+    <div class="ibm-col-12-6"> 
+    <div class=" ibm-center">
+      <br>
+      <br>
+
+     <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth   " ><a class="ibm-save-link">Save</a></button> 
+
+    </div>
+   </div>
+ </div>
 </form>
-
-
             </div>
             </div>
             </div>
