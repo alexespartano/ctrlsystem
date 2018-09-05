@@ -31,8 +31,8 @@ $sn=strtoupper($_POST['sn']);
 <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
     <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
     <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
-    <script script type="text/javascript" src="js/filters2.js"></script>
   <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script>
     IBMCore.common.util.config.set({
        backtotop: {
@@ -87,13 +87,13 @@ $sn=strtoupper($_POST['sn']);
             <div id="ibm-content">
               <div id="ibm-content-body">
                 <div id="ibm-content-main">                                   
-<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink" id="1">
+<div class="ibm-columns ibm-seamless ibm-padding-bottom-0 ibm-background-neutral-white-10" data-widget="setsameheight" data-items=".ibm-blocklink">
   <div class="ibm-columns">
     <div class="ibm-col-1-1">
-      <p class="ibm-center">Item</p>
+      <p class="ibm-center  ibm-h1">Item</p>
     </div>
   </div>
- <form action="itemw.php" method="post" class="ibm-row-form">
+ <form action="itemw.php" method="post" class="ibm-row-form"  id="1">
   <input type="hidden" value="<?php
             require_once('connectsys.php');
                   $query = 'SELECT "ID" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
@@ -111,7 +111,7 @@ $sn=strtoupper($_POST['sn']);
              ?>" name="identy">
 <!--ROW1-->
 <div class="ibm-columns">
-  <div class="ibm-col-8-2">
+  <div class="ibm-col-12-3">
     
     <label for="lo">Location:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="lo" list="loca" name="location"  value="<?php 
@@ -148,7 +148,7 @@ $sn=strtoupper($_POST['sn']);
             ?>
             </datalist>
   </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
 
       <label for="ar">Area:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="ar" list="are" name="area"  value="<?php 
@@ -186,7 +186,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
        
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
         
         <label for="br">Brand:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="br" list="bra" name="brand" value="<?php 
@@ -224,7 +224,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
 
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
        <label for="ty">Type:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="ty" list="typ" name="type" value="<?php 
             require_once('connectsys.php');
@@ -264,7 +264,7 @@ $sn=strtoupper($_POST['sn']);
 <!--ENDROW1-->
 <!--ROW2-->
 <div class="ibm-columns">
-  <div class="ibm-col-8-2">
+  <div class="ibm-col-12-3">
     
     <label for="se">Serial:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="se" list="seri" name="serial" value="<?php 
@@ -301,7 +301,7 @@ $sn=strtoupper($_POST['sn']);
             ?>
             </datalist>
   </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
 
       <label for="mo">Model:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="mo" list="mod" name="model"  value="<?php 
@@ -339,7 +339,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
        
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
         
         <label for="mat">MT:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="mat" list="mach" name="mt" value="<?php 
@@ -377,7 +377,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
 
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
       <label for="res">Responsible:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="res" list="resp" name="responsible" value="<?php 
             require_once('connectsys.php');
@@ -417,7 +417,7 @@ $sn=strtoupper($_POST['sn']);
 
 <!--ROW3-->
 <div class="ibm-columns">
-  <div class="ibm-col-8-2">
+  <div class="ibm-col-12-3">
     
     <label for="st">Status:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="st" list="sta" name="stat" value="<?php 
@@ -454,7 +454,7 @@ $sn=strtoupper($_POST['sn']);
             ?>
             </datalist>
   </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
 
       <label for="pi">Physical inv:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="pi" list="pinv" name="physical" value="<?php 
@@ -492,7 +492,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
        
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
         
         <label for="dp">Date of Pruchase:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="dp" list="dop" name="purchase" value="<?php 
@@ -530,7 +530,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
 
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
       <label for="dd">Date of Depreciation:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="dd" list="dod" name="depreciation" value="<?php 
             require_once('connectsys.php');
@@ -570,7 +570,7 @@ $sn=strtoupper($_POST['sn']);
 
 <!--ROW4-->
 <div class="ibm-columns">
-  <div class="ibm-col-8-2">
+  <div class="ibm-col-12-3">
     
     <label for="cc">Cost Center:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="cc" list="ccen" name="center" value="<?php 
@@ -607,7 +607,7 @@ $sn=strtoupper($_POST['sn']);
             ?>
             </datalist>
   </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
 
       <label for="ni">Num inver:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="ni" list="ninv" name="inver" value="<?php 
@@ -645,7 +645,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
        
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
         
         <label for="rfs">RFID s/n:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="rfs" list="rfsn" name="rfserial" value="<?php 
@@ -683,7 +683,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
 
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
       <label for="drfi">Date RFID:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="drfi" list="drf" name="drf" value="<?php 
             require_once('connectsys.php');
@@ -721,9 +721,9 @@ $sn=strtoupper($_POST['sn']);
     </div>
 </div>
 
-<<!--ROW5-->
+<!--ROW5-->
 <div class="ibm-columns">
-  <div class="ibm-col-8-2">
+  <div class="ibm-col-12-3">
     
     <label for="i">ING:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="i" list="ing" name="inge" value="<?php 
@@ -760,7 +760,7 @@ $sn=strtoupper($_POST['sn']);
             ?>
             </datalist>
   </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
 
       <label for="md">Mainte. Date:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="md" list="mdate" name="matto" value="<?php 
@@ -777,7 +777,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="mdate">
                     
                     <?php
@@ -798,7 +798,7 @@ $sn=strtoupper($_POST['sn']);
             </datalist>
        
     </div>
-    <div class="ibm-col-8-2">
+    <div class="ibm-col-12-3">
         
         <label for="fm">Frecuency of Maintenance:<span class="ibm-required">*</span></label>
                     <input type="text" size="20" id="fm" list="fre" name="frecuency" value="<?php 
@@ -848,7 +848,7 @@ $sn=strtoupper($_POST['sn']);
 function nosn(){
   //table for  s/n not founded
    echo '<script>$("#" + 1).remove();</script>';
-  echo "<br><br><br><br><br>";
+  echo "<br><br><br>";
   echo '<div class="ibm-columns ibm-seamless ibm-padding-bottom-0 ibm-pull-quote ibm-h1">
             <div class="ibm-col-6-6">
                <p class=" ibm-h1 ibm-center">Serial Number Not Founded.</p>

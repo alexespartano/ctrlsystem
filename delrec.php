@@ -62,10 +62,10 @@ if($div != "IT"){
                  echo '<script>$("#" + 1).remove();</script>';
                  echo '<script>$("#" + 2).remove();</script>';
 
-               echo '<div class="ibm-col-6-6" id="1">
+               echo '<div class="ibm-col-6-6">
                <p class=" ibm-h1 ibm-center">RECORDS REMOVED</p>
                 </div>
-                   <div class="ibm-col-6-6" id="1">
+                   <div class="ibm-col-6-6">
               <b class="ibm-ind-link"><a class="ibm-confirm-link  ibm-btn-pri" href="javascript:close()">Close Window</a></b>
                 </div>';
               }
