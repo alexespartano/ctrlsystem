@@ -15,67 +15,86 @@ $sn=0;
 $iden=0;
 $sn=strtoupper($_POST['sn']);
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>Tools</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body background="img/Background-Picture-Html.jpg">
-<!--NAVMENU-->
-<div class="row" id="header">
-<nav class="navbar navbar-inverse" id="nav">
-        <button class="navbar-toggle" data-toggle="collapse" data-target="#a" id="toggle">
-            ☰
-        </button>
-        <div class="navbar-header">
-        	<a class=" navbar-brand"><img src="img/ibm-logo-png-transparent-background.png" width="50" height="20"></a>
-            <a href="main.php" class="navbar-brand" id="title" title="Desarrollado por Alejandro Romero Aldrete">CTRL SYSTEM</a>
-        </div>       
-        <div class="collapse navbar-collapse" id="a">
-            <ul class="nav navbar-nav">
-                <li><a href="main.php">HOME</a></li>
-                 <li class="dropdown">
-                    <a href="assets.php" class="dropdown-toggle" data-toggle="dropdown" role="button">CTRL OF ASSETS</a>
-                    <ul class="dropdown-menu">
-                    	<li><a href="assets.php">VIEW/MODIFY</a></li>
-                        <li><a href="peradd.php">ADD</a></li>
-                        <li><a href="perdel.php">DELETE</a></li>
-                    </ul>
-                </li>
-                 <li><a href="rec.php">RECORDS</a></li>
-                 <li><a href="service.php">SERVICES</a></li>
-                 <li><a href="mttos.php">CALENDAR OF MAINTENANCE</a></li>
-                <li id="highlightbox"><a href="tools.php">TOOLS</a></li>
-                <li><a href="TPMVIEWER.php">TPM</a></li>
-                 <li><a href="spareparts.php">SPARE PARTS</a></li>
-            </ul>
-            <ul class="nav navbar-nav pull-right">
-            	<li><a><i class="glyphicon glyphicon-user"></i><?php echo" " .strtoupper($_SESSION['username'])."  ";?></a></li>
-				<li><a href='logout.php'>Logout</a></li>	            </ul>    
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Tool's</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+    <script script type="text/javascript" src="js/filters2.js"></script>
+  <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+  <script>
+    IBMCore.common.util.config.set({
+       backtotop: {
+        enabled: true
+        }
+    });
+</script>   
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+<nav role="navigation" aria-label="NAV">
+        <div class="ibm-sitenav-menu-container">
+            <div class="ibm-sitenav-menu-name">
+                <div id="ibm-home"><a href="main.php">IBM®</a></div>
+                <a href="main.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
+            <div class="ibm-sitenav-menu-list">
+                <ul role="menubar">
+                    <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
+                        <ul role="menu" aria-label="Assets">
+                            <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
+                            <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
+                            <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a role="menuitem" href="rec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem"  href="service.php">Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation" class="ibm-highlight"><a role="menuitem" href="tools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>
+                    <!-- Optional right side CTA link -->
+                    <li class="ibm-sitenav-menu-item-right">
+                      <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
+                      <ul role="menu" style="margin-top: -15px;">
+                            <li role="presentation"><a role="menuitem"><?php echo" " .strtoupper($_SESSION['username'])."  ";?></a></li>
+                            <li role="presentation"><a role="menuitem" href="logout.php">Logout</a></li>
+                        </ul>
+                        
+                      </li>
+                </ul>
+            </div>
+             
         </div>
     </nav>
-</div><!--ENDNAVMENU-->
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-</div>
-      <div class="row" id=1>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 well">
-          <table class="table">
-            <caption class="text-center">ITEM</caption>
-            <tbody>
-                 <form action="itemw.php" method="post">
-            <input type="hidden" value="<?php
+    <div id="ibm-leadspace-head" class="ibm-alternate" style="background: url(img/tools.jpg) center / cover no-repeat;">
+           <div id="ibm-leadspace-body" class="ibm-padding-top-2  ibm-padding-bottom-r2 ibm-alternate-background">
+           </div>
+         </div>
+        <!--filters-->      
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+          <div id="ibm-pcon">
+            <div id="ibm-content">
+              <div id="ibm-content-body">
+                <div id="ibm-content-main">                                   
+<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink" id="1">
+  <div class="ibm-columns">
+    <div class="ibm-col-1-1">
+      <p class="ibm-center">Item</p>
+    </div>
+  </div>
+ <form action="itemw.php" method="post" class="ibm-row-form">
+  <input type="hidden" value="<?php
             require_once('connectsys.php');
                   $query = 'SELECT "ID" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -90,9 +109,12 @@ $sn=strtoupper($_POST['sn']);
                             }
                         }
              ?>" name="identy">
-              <tr>
-                <td><label>LOCATION:</label><br>
-                    <input list="loca" name="location" value="<?php 
+<!--ROW1-->
+<div class="ibm-columns">
+  <div class="ibm-col-8-2">
+    
+    <label for="lo">Location:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="lo" list="loca" name="location"  value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT LOCATION FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -106,7 +128,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="loca">
                     
                     <?php
@@ -124,9 +146,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>AREA:</label><br>
-                    <input list="are" name="area" value="<?php 
+            </datalist>
+  </div>
+    <div class="ibm-col-8-2">
+
+      <label for="ar">Area:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="ar" list="are" name="area"  value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "AREA" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -140,7 +165,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="are">
                     
                     <?php
@@ -158,9 +183,13 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>BRAND:</label><br>
-                    <input list="bra" name="brand" value="<?php 
+            </datalist>
+       
+    </div>
+    <div class="ibm-col-8-2">
+        
+        <label for="br">Brand:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="br" list="bra" name="brand" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "BRAND" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -174,7 +203,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="bra">
                     
                     <?php
@@ -192,9 +221,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>TYPE:</label><br>
-                    <input list="typ" name="type" value="<?php 
+            </datalist>
+
+    </div>
+    <div class="ibm-col-8-2">
+       <label for="ty">Type:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="ty" list="typ" name="type" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "TYPE" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -208,7 +240,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="typ">
                     
                     <?php
@@ -226,11 +258,16 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-              </tr>
-              <tr>
-                <td><label>SERIAL:</label><br>
-                    <input list="seri" name="serial" value="<?php 
+            </datalist>
+    </div>
+</div>
+<!--ENDROW1-->
+<!--ROW2-->
+<div class="ibm-columns">
+  <div class="ibm-col-8-2">
+    
+    <label for="se">Serial:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="se" list="seri" name="serial" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "S/N" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -244,7 +281,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="seri">
                     
                     <?php
@@ -262,9 +299,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>MODEL:</label><br>
-                    <input list="mod" name="model" value="<?php 
+            </datalist>
+  </div>
+    <div class="ibm-col-8-2">
+
+      <label for="mo">Model:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="mo" list="mod" name="model"  value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "MODEL" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -278,7 +318,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="mod">
                     
                     <?php
@@ -296,9 +336,13 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>MT:</label><br>
-                    <input list="mach" name="mt" value="<?php 
+            </datalist>
+       
+    </div>
+    <div class="ibm-col-8-2">
+        
+        <label for="mat">MT:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="mat" list="mach" name="mt" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "MT" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -312,7 +356,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="mach">
                     
                     <?php
@@ -330,9 +374,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>RESPONSIBLE:</label><br>
-                    <input list="resp" name="responsible" value="<?php 
+            </datalist>
+
+    </div>
+    <div class="ibm-col-8-2">
+      <label for="res">Responsible:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="res" list="resp" name="responsible" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "RESPONSIBLE" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -346,7 +393,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="resp">
                     
                     <?php
@@ -364,11 +411,16 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-              </tr>
-              <tr>
-                <td><label>STATUS:</label><br>
-                    <input list="sta" name="stat" value="<?php 
+            </datalist>
+    </div>
+</div>
+
+<!--ROW3-->
+<div class="ibm-columns">
+  <div class="ibm-col-8-2">
+    
+    <label for="st">Status:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="st" list="sta" name="stat" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "STAT" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -382,7 +434,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="sta">
                     
                     <?php
@@ -400,9 +452,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>PHYSICAL INV:</label><br>
-                    <input list="pinv" name="physical" value="<?php 
+            </datalist>
+  </div>
+    <div class="ibm-col-8-2">
+
+      <label for="pi">Physical inv:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="pi" list="pinv" name="physical" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -416,7 +471,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="pinv">
                     
                     <?php
@@ -434,9 +489,13 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>DATE OF PURCHASE:</label><br>
-                    <input list="dop" name="purchase" value="<?php 
+            </datalist>
+       
+    </div>
+    <div class="ibm-col-8-2">
+        
+        <label for="dp">Date of Pruchase:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="dp" list="dop" name="purchase" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "DATE OF PURCHASE" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -450,7 +509,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="dop">
                     
                     <?php
@@ -468,9 +527,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>DATE OF DEPRECIATION:</label><br>
-                    <input list="dod" name="depreciation" value="<?php 
+            </datalist>
+
+    </div>
+    <div class="ibm-col-8-2">
+      <label for="dd">Date of Depreciation:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="dd" list="dod" name="depreciation" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "DATE OF DEPRECIATION" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -484,7 +546,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="dod">
                     
                     <?php
@@ -502,11 +564,16 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-              </tr>
-              <tr>
-                <td><label>COST CENTER:</label><br>
-                    <input list="ccen" name="center" value="<?php 
+            </datalist>
+    </div>
+</div>
+
+<!--ROW4-->
+<div class="ibm-columns">
+  <div class="ibm-col-8-2">
+    
+    <label for="cc">Cost Center:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="cc" list="ccen" name="center" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "COST CENTER" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -520,7 +587,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="ccen">
                     
                     <?php
@@ -538,9 +605,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>NUM INVER:</label><br>
-                    <input list="ninv" name="inver" value="<?php 
+            </datalist>
+  </div>
+    <div class="ibm-col-8-2">
+
+      <label for="ni">Num inver:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="ni" list="ninv" name="inver" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "NUM INVER" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -554,7 +624,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="ninv">
                     
                     <?php
@@ -572,9 +642,13 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>RFID S/N:</label><br>
-                    <input list="rfsn" name="rfserial" value="<?php 
+            </datalist>
+       
+    </div>
+    <div class="ibm-col-8-2">
+        
+        <label for="rfs">RFID s/n:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="rfs" list="rfsn" name="rfserial" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -588,7 +662,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="rfsn">
                     
                     <?php
@@ -606,9 +680,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>DATE RFID:</label><br>
-                    <input list="drf" name="drf" value="<?php 
+            </datalist>
+
+    </div>
+    <div class="ibm-col-8-2">
+      <label for="drfi">Date RFID:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="drfi" list="drf" name="drf" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "DATE RFID" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -622,7 +699,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="drf">
                     
                     <?php
@@ -640,11 +717,16 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-              </tr>
-              <tr>
-                <td><label>ING:</label><br>
-                    <input list="ing" name="inge" value="<?php 
+            </datalist>
+    </div>
+</div>
+
+<<!--ROW5-->
+<div class="ibm-columns">
+  <div class="ibm-col-8-2">
+    
+    <label for="i">ING:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="i" list="ing" name="inge" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "ING" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -658,7 +740,7 @@ $sn=strtoupper($_POST['sn']);
              echo $row[0];
                             }
                         }
-          ?>" autofocus>
+          ?>">
                      <datalist id="ing">
                     
                     <?php
@@ -676,9 +758,12 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>MAINTE. DATE:</label><br>
-                    <input list="mdate" name="matto" value="<?php 
+            </datalist>
+  </div>
+    <div class="ibm-col-8-2">
+
+      <label for="md">Mainte. Date:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="md" list="mdate" name="matto" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "FECHA MATTO" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -710,9 +795,13 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td><label>FRECUENCY OF MAINTENANCE:</label><br>
-                    <input list="fre" name="frecuency" value="<?php 
+            </datalist>
+       
+    </div>
+    <div class="ibm-col-8-2">
+        
+        <label for="fm">Frecuency of Maintenance:<span class="ibm-required">*</span></label>
+                    <input type="text" size="20" id="fm" list="fre" name="frecuency" value="<?php 
             require_once('connectsys.php');
                   $query = 'SELECT "FRECUENCY MTTO" FROM CTRLSYSTEM.INV WHERE "S/N"='."'$sn'";
             $stmt = db2_prepare($db2,$query);
@@ -743,21 +832,33 @@ $sn=strtoupper($_POST['sn']);
                             }   
                         }
             ?>
-            </datalist></td>
-                <td></td>
-              </tr>
-              <tr><td colspan="4"><a href="javascript:close()"><button type="submit" class="btn btn-default" >Apply Changes.</button></a></td></tr>
-            </form>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <?php
+            </datalist>
+
+    </div>
+    
+</div>
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+  <p class="ibm-right"><button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth"><a class="ibm-save-link">Save</a></button></p>
+</div>
+</div>
+</form>
+  <?php
+      $flag=0;
 function nosn(){
   //table for  s/n not founded
    echo '<script>$("#" + 1).remove();</script>';
   echo "<br><br><br><br><br>";
-  echo '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6 well" style="font-size: 40px; background-color:rgb(204,204,204);">Serial Number Not Founded.<br><a href="tools.php"><button type="button" class="btn btn-default">Go Back</button></a></div></div>';
+  echo '<div class="ibm-columns ibm-seamless ibm-padding-bottom-0 ibm-pull-quote ibm-h1">
+            <div class="ibm-col-6-6">
+               <p class=" ibm-h1 ibm-center">Serial Number Not Founded.</p>
+                </div>
+        </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <b class="ibm-ind-link"><a class="ibm-close-link  ibm-btn-pri" href="tools.php">Go Back</a></b>
+            </div>
+        </div> ';
 }
 if($sn!=0 || $sn!=''){
   require_once('connectsys.php');
@@ -781,5 +882,26 @@ if($sn!=0 || $sn!=''){
   nosn();
 }
 ?>
-</body>
+
+
+
+              </div>
+            </div>
+          </div>
+        </main>
+  </body>
+    <br>
+  <br>
+  <br>
+<div class="ibm-columns">
+  <div class="ibm-col-12-9"></div>
+  <div class="ibm-col-12-3 ibm-right">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="ibm-ind-link"><a class="ibm-email-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-help-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
+  <div class="ibm-common-overlay  ibm-overlay-alt" data-widget="overlay" id="overlayExampleSmall">
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">gilbusta@mx1.ibm.com Gilberto Bustamante Sanchez</a></p>
+</div>
+</div>
+</div>
 </html>

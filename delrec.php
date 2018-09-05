@@ -44,7 +44,6 @@ if($div != "IT"){
             <div class="ibm-col-1-1" id="2">
               <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-btn-small"><a class="ibm-confirm-link  ibm-btn-sec" href="#">Yes</a></button>
                 <b class="ibm-ind-link"><a class="ibm-close-link  ibm-btn-pri" href="javascript:close()">No</a></b>
-     </span>
             </div>
         </div> 
     </form>     
