@@ -33,9 +33,6 @@ if(isset($_POST['log'])) {
         if($division == "TOOL"){
             header("location: toolspare.php");
         }
-        if($division == "GERENCIA"){
-            header("location: viewer.php");
-        }
 		if($division == "MFS"){
             header("location: viewermfs.php");
         }

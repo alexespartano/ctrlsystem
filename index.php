@@ -43,9 +43,6 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
                         if($division == "TOOL"){
                          header("location: toolspare.php");
                         }
-              if($division == "GERENCIA"){
-                         header("location: viewer.php");
-                        }
                          if($division == "MANUFACTURA"){
                          header("location: diskfile.php");
                         }

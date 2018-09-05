@@ -6,13 +6,9 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: index.php");
   exit;
 }else{
-$user = strtoupper($_SESSION['username']);
-if($user == "GERENCIA"){
-}else{
  require_once('authorized.php');
- if($div != "IT"){
+if($div != "IT"){
  header("location: index.php");
-}
 }
 }
 ?>
@@ -58,10 +54,7 @@ if($user == "GERENCIA"){
                 <a href="main.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
             <div class="ibm-sitenav-menu-list">
                 <ul role="menubar">
-
-                  <?php
-                  if($user != "GERENCIA"){
-                    echo '<li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
+                    <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
                         <ul role="menu" aria-label="Assets">
                             <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
                             <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
@@ -73,14 +66,7 @@ if($user == "GERENCIA"){
                     <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
-                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>';
-                     }else{
-                       echo '<li role="presentation"><a role="menuitem" href="viewer.php">Ctrl of Assets</a></li>
-                    <li role="presentation"><a role="menuitem" href="recG.php">Records</a></li>
-                    <li role="presentation"><a role="menuitem" href="mttoG.php">Calendar of Maintenance</a></li>
-                      <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>';
-                     }
-                          ?>
+                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>git 
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
@@ -104,11 +90,7 @@ if($user == "GERENCIA"){
                   <br>
                 <div class="ibm-columns">
                   <div class="ibm-col-1-1 ibm-center ibm-pull-quote ibm-h1">
-                    <?php
-          if($user != "GERENCIA"){
-         echo '<p class="ibm-textcolor-blue-50"><span class="ibm-pullquote-open">“</span>Nota la Tabla del TPM Solo se Puede Eliminar los Viernes<span class="ibm-pullquote-close">“</span></p>';
-          }
-         ?>
+         <p class="ibm-textcolor-blue-50"><span class="ibm-pullquote-open">“</span>Nota la Tabla del TPM Solo se Puede Eliminar los Viernes<span class="ibm-pullquote-close">“</span></p>
                   </div>
                   <br>
                   <div class="ibm-columns">
