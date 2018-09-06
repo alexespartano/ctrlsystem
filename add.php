@@ -308,7 +308,7 @@ if($div != "IT"){
                 <span>
               
                    <select  id="STAT" title="Status" size="25" required name="STAT">
-                   <option SIZE="25" value="" selected="selected">N/A</option>
+                   <option SIZE="25" value="" selected="selected"></option>
                     
 
                   
@@ -411,7 +411,7 @@ if($div != "IT"){
 
 
                     <select  id="ING" title="Status" size="25" name="ING" required>
-                   <option SIZE="25" value="" selected="selected">N/A</option>
+                   <option SIZE="25" value="" selected="selected"></option>
 
                    
                 <?php
@@ -444,7 +444,7 @@ if($div != "IT"){
       <br>
       <label for="mtt">Matto Date yy/mm/dd:<span class="ibm-required">*</span></label>
                 <span>
-                    <input  type="text" value="" size="40" id="mtt"  name="FECHAMTTO" min="2000-01-01" max="3000-12-31"  required>
+                    <input  type="text" value="" size="40" id="mtt"  name="FECHAMTTO"  required>
                     <datalist id="FECHAMTTO">  </datalist>
              
         </span>
