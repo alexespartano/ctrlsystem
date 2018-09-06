@@ -19,7 +19,7 @@ if($div != "IT"){
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Assets</title>
+    <title>Service</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -162,7 +162,7 @@ if($div != "IT"){
                     }else{
                         if ($recmonth == $month){ 
                              $link= "<script>
-                              window.open('label.php?id='+'$itemid','Modifica_U','scrollbars=no,top=220,left=500,width=220,height=250');
+                              window.open('label.php?id='+'$itemid','Modifica_U','scrollbars=no,top=220,left=500,width=280,height=320');
                             </script>";
                             echo $link;
                            $newdate1 =  date_create("20".$fecha);
@@ -203,7 +203,7 @@ if($div != "IT"){
                     $numb =substr($dif,1);
                     if($sim == "+" && $numb > 31){
                         $link= "<script>
-                              window.open('label.php?id='+'$itemid','Modifica_U','scrollbars=no,top=220,left=500,width=220,height=250');
+                              window.open('label.php?id='+'$itemid','Modifica_U','scrollbars=no,top=220,left=500,width=280,height=320');
                             </script>";
                             echo $link;
                              require_once('connectsys.php');

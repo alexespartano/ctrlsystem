@@ -35,27 +35,33 @@ $lmon =substr($lmto,3,2);
 $lday =substr($lmto,6);
 
 for($c=1;$c<=12;$c++){
-	if($mon==$c){
-		$Todays=$day."/".$months[$c-1]."/".$yea;
-			break;
-	
-	}
+  if($mon==$c){
+    $Todays=$day."/".$months[$c-1]."/".$yea;
+      break;
+  
+  }
 }
 for($d=1;$d<=12;$d++){
-	if($lmon==$d){
-		$lmto=$lday."/".$months[$d-1]."/".$lyea;
-			break;
-				}
-			}
-echo"<div style='color:rgb(180,180,180);'>";
-echo"<h4>          MTTO PREVENTIVO</h4>";
+  if($lmon==$d){
+    $lmto=$lday."/".$months[$d-1]."/".$lyea;
+      break;
+        }
+      }
+echo '<div class="ibm-columns">';
+echo '<div class="ibm-col-1-1 ibm-center">';
+echo "<h4>MTTO PREVENTIVO</h4>";
+echo '</div>';
+echo '</div>';
+echo '<div class="ibm-columns">';
+echo '<div class="ibm-col-1-1">';
 echo "<p>Area: ".$lare."</p>";
 echo "<p>".$ling."</p>";
 echo "<p>U.MTTO: ".$Todays."</p>";
 echo"<p> Prox.MTTO: ". $lmto."</p>";
 echo "<p>Serial: ".$lser."</p>";
+echo '<p class="ibm-ind-link"><a class="ibm-print-link ibm-btn-pri ibm-fullwidth" href="#" onclick="openWin()" autofocus>Print Label</a></p>';
 echo "</div>";
-echo "<input type='button' class='boxes form-control' value='Print Label' onclick='openWin()'  autofocus/>";
+echo "</div>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
@@ -91,19 +97,16 @@ $cadena='${^XA
 ^XZ}$';
 echo $cadena;
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />      
 <title>LABEL</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+  <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
 </head>
-<body background="img/Background-Picture-Html.jpg">
+<body>
 </body>
 </html>
 <script type="text/javascript">
@@ -112,4 +115,3 @@ echo $cadena;
     window.close();
   }
 </script>
-
