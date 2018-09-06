@@ -14,38 +14,40 @@ if($div != "IT"){
 $id = "null";
 $id=strtoupper($_GET['id']);
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>MODIFY</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body background="img/Background-Picture-Html.jpg">
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
- 	<table class="table table-responsive table-condensed" id="modtable">
-			<thead>
-				<tr>
-                	<th colspan="2">MODIFIER</th>
-				</tr>
-			</thead>
-            <form action="write.php" method="post">
-            <input type="hidden" value="<?php echo $id;?>" name="identy">
-            <tr>
-            	<td>
-                	<label>LOCATION:</label><br>
-                    <input list="loca" name="location" value="<?php 
-					  require_once('connectsys.php');
-            			$query = "SELECT LOCATION FROM CTRLSYSTEM.INV WHERE ID='$id'";
-						$stmt = db2_prepare($db2,$query);
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Modifier</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form class="ibm-row-form" action="write.php" method="post">
+                          <input type="hidden" value="<?php echo $id;?>" name="identy">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Modifier</p>
+            </div>
+        </div>          
+        <div class="ibm-columns">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2 ibm-center">
+                <label for="lo">Location:</label>
+                     <input type="text" list="loca" name="location" id="lo" value="<?php 
+                      require_once('connectsys.php');
+                        $query = "SELECT LOCATION FROM CTRLSYSTEM.INV WHERE ID='$id'";
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -53,10 +55,10 @@ $id=strtoupper($_GET['id']);
                             exit;
                           }
                         while($row = db2_fetch_array($stmt)){
-					 	 echo $row[0];
+                         echo $row[0];
                             }
                         }
-					?>" autofocus>
+                    ?>" autofocus>
                      <datalist id="loca">
                     
                     <?php
@@ -75,13 +77,13 @@ $id=strtoupper($_GET['id']);
                         }
             ?>
             </datalist>  
-                </td>
-                <td>
-              		<label>AREA:</label><br>
-                    <input list="ARE" name="area" value="<?php 
-					  require_once('connectsys.php');
-            			$query = "SELECT AREA FROM CTRLSYSTEM.INV WHERE ID='$id'";
-						$stmt = db2_prepare($db2,$query);
+                </div>
+                    <div class="ibm-col-6-2 ibm-center">
+                         <label for="ar">Area:</label>
+                    <input type="text" list="ARE" name="area" id="ar" value="<?php 
+                      require_once('connectsys.php');
+                        $query = "SELECT AREA FROM CTRLSYSTEM.INV WHERE ID='$id'";
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -92,7 +94,7 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?>">
+                    ?>">
                     <datalist id="ARE">
                         <?php
                         require_once('connectsys.php');
@@ -110,11 +112,13 @@ $id=strtoupper($_GET['id']);
                         }
                     ?>
                     </datalist>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>BRAND:</label><br>
+            </div>
+        </div>
+
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2 ibm-center">
+            <label>Brand:</label>
                     <label><?php
                         $BRANDV = ""; 
                       require_once('connectsys.php');
@@ -135,13 +139,13 @@ $id=strtoupper($_GET['id']);
                      <input type="hidden" value="<?php 
                      echo $BRANDV;
                      ?>" name="brand">
-                </td>
-                <td>
-                	<label>TYPE:</label><br>
-					<label><?php 
-					  require_once('connectsys.php');
-            			$query = "SELECT TYPE FROM CTRLSYSTEM.INV WHERE ID='$id'";
-						$stmt = db2_prepare($db2,$query);
+                </div>
+                    <div class="ibm-col-6-2 ibm-center">
+                        <label>Type:</label>
+                  <label><?php 
+                      require_once('connectsys.php');
+                        $query = "SELECT TYPE FROM CTRLSYSTEM.INV WHERE ID='$id'";
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -152,16 +156,19 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?></label><br>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>S/N:</label><br>
-                    	<label> <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "S/N" FROM CTRLSYSTEM.INV WHERE ID='.$id;
-						$stmt = db2_prepare($db2,$query);
+                    ?></label>
+            </div>
+        </div>
+
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2 ibm-center">
+
+                <label>S/N:</label>
+                  <label> <?php 
+                      require_once('connectsys.php');
+                        $query = 'SELECT "S/N" FROM CTRLSYSTEM.INV WHERE ID='.$id;
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -172,14 +179,15 @@ $id=strtoupper($_GET['id']);
                             echo $row[0];
                             }
                         }
-					?></label>
-                </td>
-                <td>
-                	<label>MODEL:</label><br>
-                    	<label> <?php 
-					  require_once('connectsys.php');
-            			$query = "SELECT MODEL FROM CTRLSYSTEM.INV WHERE ID='$id'";
-						$stmt = db2_prepare($db2,$query);
+                    ?></label>
+                </div>
+                    <div class="ibm-col-6-2 ibm-center">
+
+                <label>Model:</label>
+                   <label> <?php 
+                      require_once('connectsys.php');
+                        $query = "SELECT MODEL FROM CTRLSYSTEM.INV WHERE ID='$id'";
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -190,13 +198,15 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-              		<label>RESPONSIBLE:</label><br>
-                	<label> <?php
+                    ?></label>
+            </div>
+        </div>
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2 ibm-center">
+
+                <label>Responsible:</label>
+                    <label> <?php
                         $RESV = ""; 
                       require_once('connectsys.php');
                         $query = "SELECT RESPONSIBLE FROM CTRLSYSTEM.INV WHERE ID='$id'";
@@ -216,13 +226,14 @@ $id=strtoupper($_GET['id']);
                     <input type="hidden" value="<?php 
                      echo $RESV;
                      ?>" name="responsible">
-                </td>
-            	<td>
-                	<label>STATUS:</label><br>
-                	<input list="stats" name="status" value="<?php 
-					  require_once('connectsys.php');
-            			$query = "SELECT STAT FROM CTRLSYSTEM.INV WHERE ID='$id'";
-						$stmt = db2_prepare($db2,$query);
+                </div>
+                    <div class="ibm-col-6-2 ibm-center">
+
+                <label for="st">Status:</label>
+                   <input type="text" list="stats" name="status" id="st" value="<?php 
+                      require_once('connectsys.php');
+                        $query = "SELECT STAT FROM CTRLSYSTEM.INV WHERE ID='$id'";
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -233,12 +244,12 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?>">
+                    ?>">
                     <datalist id="stats">
                     <?php
-					require_once('connectsys.php');
-					$query = "SELECT STAT FROM CTRLSYSTEM.INV GROUP BY STAT";
-					$stmt = db2_prepare($db2,$query);
+                    require_once('connectsys.php');
+                    $query = "SELECT STAT FROM CTRLSYSTEM.INV GROUP BY STAT";
+                    $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -249,17 +260,19 @@ $id=strtoupper($_GET['id']);
                             echo '<option value="'. $row[0] .'">';
                             }   
                         }
-					?>
+                    ?>
             </datalist>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>PHYSICAL INVENTORY:</label><br>
-                    <input list="physical" name="inventariofisico" value="<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV WHERE ID='.$id;
-						$stmt = db2_prepare($db2,$query);
+            </div>
+        </div>
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-1"></div>
+            <div class="ibm-col-6-2 ibm-center">
+                     
+                <label for="pi">Physical Inv:</label>
+                    <input type="text" list="physical" name="inventariofisico" id="pi" value="<?php 
+                      require_once('connectsys.php');
+                        $query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV WHERE ID='.$id;
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -270,12 +283,12 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?>">
+                    ?>">
                      <datalist id="physical">
                     <?php
-					require_once('connectsys.php');
-					$query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV GROUP BY "PHYSICAL INV"';
-					$stmt = db2_prepare($db2,$query);
+                    require_once('connectsys.php');
+                    $query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV GROUP BY "PHYSICAL INV"';
+                    $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -286,15 +299,16 @@ $id=strtoupper($_GET['id']);
                             echo '<option value="'. $row[0] .'">';
                             }   
                         }
-					?>
+                    ?>
             </datalist>
-                </td>
-                <td>
-                	<label>RFID S/N:</label><br>
-                    <input list="sn" name="rfidserial" value="<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV WHERE ID='.$id;
-						$stmt = db2_prepare($db2,$query);
+                </div>
+                    <div class="ibm-col-6-2 ibm-center">
+                    
+                <label for="rfs">RFID S/N:</label>
+                    <input type="text" list="sn" name="rfidserial" id="rfs" value="<?php 
+                      require_once('connectsys.php');
+                        $query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV WHERE ID='.$id;
+                        $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -305,12 +319,12 @@ $id=strtoupper($_GET['id']);
                          echo $row[0];
                             }
                         }
-					?>">
+                    ?>">
                      <datalist id="sn">
                     <?php
-					require_once('connectsys.php');
-					$query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV GROUP BY "RFID S/N"';
-					$stmt = db2_prepare($db2,$query);
+                    require_once('connectsys.php');
+                    $query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV GROUP BY "RFID S/N"';
+                    $stmt = db2_prepare($db2,$query);
                         if($stmt){
                              $result = db2_execute($stmt);
                         if (!$result) {
@@ -321,27 +335,26 @@ $id=strtoupper($_GET['id']);
                             echo '<option value="'. $row[0] .'">';
                             }   
                         }
-					?>
+                    ?>
             </datalist>
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<label>COMMENTS:</label><br>
-                    <input name="comments" maxlength="28">
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<button type="submit" name="modi" id="subutton"><i class="glyphicon  glyphicon-save"></i></button>
-              	</td>
-            </tr>
-            </form>
-            </table>
- 
- </div>
+            </div>
+        </div>
+            <div class="ibm-columns">
+                <div class="ibm-col-1-1 ibm-center">
+                <label for="cme">Comments:</label>
+                      <input type="text" name="comments" maxlength="28" id="cme"></div>
 
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+            </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-save-link">Save</a></button>
+            </div>
+        </div> 
+
+    </form>       
+        </main>
+      </div>
+    </div>
+
+  </body>
 </html>

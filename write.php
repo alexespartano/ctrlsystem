@@ -265,245 +265,48 @@ $commentsw = strtoupper($_POST['comments']);
                     }
 
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>MODIFY</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Modifier</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
 
-
-<body background="img/Background-Picture-Html.jpg">
-
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
- 	<table class="table table-responsive table-condensed" id="modtable">
-			<thead>
-				<tr>
-                	<th colspan="2">MODIFIER</th>
-				</tr>
-			</thead>
-            <form action="write.php" method="post">
-            <input type="hidden" value="<?php echo $id;?>" name="identy">
-            <tr>
-            	<td>
-                	<label>LOCATION:
-                   <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "LOCATION" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-             $stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }   
-					?></label>
-                </td>
-                <td>
-              		<label>AREA:
-                    <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "AREA" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>BRAND:
-                    <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "BRAND" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-                <td>
-                	<label>TYPE: <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "TYPE" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>S/N: <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "S/N" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-                <td>
-                	<label>MODEL: <?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "MODEL" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-              		<label>RESPONSIBLE:<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "RESPONSIBLE" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            	<td>
-                	<label>STATUS:<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "STAT" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td>
-                	<label>PHYSICAL INVENTORY:<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "PHYSICAL INV" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-                <td>
-                	<label>RFID S/N:<?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "RFID S/N" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<label>COMMENTS</label><br><label><?php 
-					  require_once('connectsys.php');
-            			$query = 'SELECT "COMMENTS" FROM CTRLSYSTEM.INV WHERE ID='.$idw;
-						$stmt = db2_prepare($db2, $query);
-                              if($stmt){
-                                  $result = db2_execute($stmt);
-                                  if (!$result) {
-                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                                    exit;
-                                    }
-                                    while($row = db2_fetch_array($stmt)){
-                                       echo $row[0];
-                                    }
-                                    }
-					?></label>
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<a href="javascript:close()">Close Window</a>
-              	</td>
-            </tr>
-            </form>
-            </table>
- </div>
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form action="#" method="post" class="ibm-row-form">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Modifier</p>
+            </div>
+        </div>          
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-6">
+                <p class=" ibm-h1 ibm-center">Item Modified</p>
+                </div>
+        </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+              <p class="ibm-ind-link"><a class="ibm-confirm-link ibm-btn-sec" href="javascript:close()">Close Window</a></p>
+     </span>
+            </div>
+        </div> 
+    </form>       
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
