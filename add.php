@@ -88,7 +88,7 @@ if($div != "IT"){
       <div id="menuoptions">
       <label for="loc">Location:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="loc" list="LOCATION" name="LOCATION" title="Double click to display all current options" maxlength="20" autofocus pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="loc" list="LOCATION" name="LOCATION" title="Double click to display all current options" maxlength="20" autofocus pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="LOCATION">
                     <?php
                     //query to generete all the options on the datalist
@@ -117,7 +117,7 @@ if($div != "IT"){
 
                 <label for="are">Area:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="are" list="AREA" name="AREA" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="are" list="AREA" name="AREA" title="Double click to display all current options" maxlength="15" autofocus pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="AREA">
                  <?php
                         //query to generete all the options on the datalist
@@ -148,7 +148,7 @@ if($div != "IT"){
       <br>
       <label for="bra">Brand:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="bra" list="BRAND" name="BRAND" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="bra" list="BRAND" name="BRAND" title="Double click to display all current options" maxlength="15" autofocus pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="BRAND">
                     <?php
                     //query to generete all the options on the datalist
@@ -174,7 +174,7 @@ if($div != "IT"){
 <br>
                 <label for="typ">Type:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="typ" list="TYPE" name="TYPE" title="Double click to display all current options" maxlength="12" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="typ" list="TYPE" name="TYPE" title="Double click to display all current options" maxlength="12"  pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="TYPE">
                 <?php
                     //query to generete all the options on the datalist
@@ -214,7 +214,7 @@ if($div != "IT"){
 <br>
                 <label for="typ">Model:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="typ" list="MODEL" name="MODEL" title="Double click to display all current options" maxlength="12" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="typ" list="MODEL" name="MODEL" title="Double click to display all current options" maxlength="12"  pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="MODEL">
                 <?php
                     //query to generete all the options on the datalist
@@ -247,7 +247,7 @@ if($div != "IT"){
       <br>
       <label for="mt">MT:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="mt" list="MT" name="MT" title="Double click to display all current options" maxlength="10" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="mt" list="MT" name="MT" title="Double click to display all current options" maxlength="10"  pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="MT">
                     <?php
                     //query to generete all the options on the datalist
@@ -273,7 +273,7 @@ if($div != "IT"){
       <br>
                 <label for="res">Responsible:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="res" list="RESPONSIBLE" name="RESPONSIBLE" title="Double click to display all current options" maxlength="15" pattern="[A-Z0-9--]{2,30}" required>
+                    <input type="text" value="" size="40" id="res" list="RESPONSIBLE" name="RESPONSIBLE" title="Double click to display all current options" maxlength="15"  pattern="[A-Z0-9/- --]{2,30}" required>
                     <datalist id="TYPE">
               <?php
                     //query to generete all the options on the datalist
@@ -442,14 +442,15 @@ if($div != "IT"){
     <div class="ibm-col-12-3"> </div>
     <div class="ibm-col-12-3"> 
       <br>
-      <label for="mtt">Matto Date mm/dd/yy:<span class="ibm-required">*</span></label>
+      <label for="mtt">Matto Date yy/mm/dd:<span class="ibm-required">*</span></label>
                 <span>
-                    <input type="text" value="" size="40" id="mtt"  name="FECHAMTTO" min="2000-01-01" max="3000-12-31"  required>
-                    <datalist id="FECHAMTTO">
-                 
-            </datalist>
-                </span>
-    </div>
+                    <input  type="text" value="" size="40" id="mtt"  name="FECHAMTTO" min="2000-01-01" max="3000-12-31"  required>
+                    <datalist id="FECHAMTTO">  </datalist>
+             
+        </span>
+        
+            </div>
+    
      <div class="ibm-col-12-4">
       <br>
 
