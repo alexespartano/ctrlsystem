@@ -182,7 +182,7 @@ exit;
         </main>
         <script>
 function modi(id){
-  window.open('label.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=220,height=250');  
+  window.open('label.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=280,height=320');  
 }
 </script>
   </body>
