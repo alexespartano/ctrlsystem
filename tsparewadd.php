@@ -48,33 +48,49 @@ $num=0;
                           }
                }
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>MODIFY</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Part Added</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
 
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form action="#" method="post" class="ibm-row-form">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Part Added</p>
+            </div>
+        </div>          
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-6-6">
+                <p class=" ibm-h1 ibm-center">Part Added on SparePart's</p>
+                </div>
+        </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+              <p class="ibm-ind-link"><a class="ibm-confirm-link ibm-btn-sec" href="javascript:close()">Close Window</a></p>
+     </span>
+            </div>
+        </div> 
+    </form>       
+        </main>
+      </div>
+    </div>
 
-<body background="img/Background-Picture-Html.jpg">
-
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
-  <table class="table table-responsive table-condensed" id="modtable">
-          <caption class="text-center" style="font-size: 25px;">ITEM ADDED</caption>
-           <tr><td colspan="2"><a href="javascript:close()"><button type="button" class="btn btn-default">Close Window</button></a></td></tr>
-            
-            </table>
- </div>
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+  </body>
 </html>

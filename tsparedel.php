@@ -10,38 +10,38 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 if($div != "TOOL"){
  header("location: index.php");
 }
-}
-$id = "null";
-$id=strtoupper($_GET['id']);
-?>
-<!doctype html>
-<html>
+}?>
+<!DOCTYPE html>
+<html lang="en-US" >
 <head>
-<meta charset="utf-8">
-<title>DELETE</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body background="img/Background-Picture-Html.jpg">
-<!--CONTENTOPTIONS-->
-<div class="container">
-<div class="row boxcol">
- <div class="col-sm-12">
- 	<table class="table table-responsive table-condensed" id="modtable">
-			<thead>
-				<tr>
-                	<th colspan="2">DELETE</th>
-				</tr>
-			</thead>
-            <form action="tsparewdel.php" method="post">
-            <tr>
-            	<td>
-                	<label>ITEM:</label><br>
-                 <select id="Input2" placeholder="TYPE" title="SEARCH FOR TYPE"  style="font-size: 9px;" name="tdesc">
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>Delete Part's</title>
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                    <form action="tsparewdel.php" method="post" class="ibm-row-form">
+                      <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                <p>Delete Part</p>
+            </div>
+        </div>          
+        <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
+            <div class="ibm-col-1-1 ibm-center">
+                <label for="I">Item:<span class="ibm-required">*</span></label>
+                <select id="I" name="tdesc">
                 <option value=""></option>
                 <?php
                     require_once('connectsys.php');
@@ -59,17 +59,17 @@ $id=strtoupper($_GET['id']);
                 }
                     ?>
             </select>
-                </td>
-            </tr>
-            <tr>
-            	<td colspan="2">
-                	<button type="submit" name="modi" id="subutton"><i class="glyphicon  glyphicon-save"></i></button>
-              	</td>
-            </tr>
-            </form>
-            </table>
- </div>
-</div>
-</div><!--ENCONTENTOPTIONS-->
-</body>
+                </div>
+        </div>
+        <div class="ibm-columns ibm-center">
+            <div class="ibm-col-1-1">
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-close-link">Delete</a></button>
+            </div>
+        </div> 
+    </form>       
+        </main>
+      </div>
+    </div>
+
+  </body>
 </html>

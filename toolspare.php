@@ -254,10 +254,10 @@ function modi(id){
   win2 = window.open('tsparemod.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=480,height=380');  
 }
 function add(){
- win3 = window.open('tspareadd.php','Modifica_U','scrollbars=no,top=220,left=500,width=750,height=480'); 
+ win3 = window.open('tspareadd.php','Modifica_U','scrollbars=no,top=20,left=500,width=750,height=750'); 
 }
 function del(){
- win3 = window.open('tsparedel.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=200'); 
+ win3 = window.open('tsparedel.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=450'); 
 }
 </script>
 </div>

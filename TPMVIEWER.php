@@ -66,7 +66,7 @@ if($div != "IT"){
                     <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
-                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>git 
+                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li> 
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>

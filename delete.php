@@ -291,7 +291,7 @@ if($div != "IT"){
         </main>
 <script>
 function modi(id){
-    win2 = window.open('del.php?id='+id,'Modifica_U','scrollbars=no,top=220,left=500,width=580,height=450');    
+    win2 = window.open('del.php?id='+id,'Modifica_U','scrollbars=no,top=20,left=500,width=750,height=750');    
 }
 </script>
   </body>
