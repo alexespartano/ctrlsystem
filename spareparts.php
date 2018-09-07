@@ -134,7 +134,7 @@ if($div != "IT"){
             echo '<tr>';
           }
         }
-            echo '<td align="center" class="ibm-ind-link"><a href="#" onclick="javascript:modi('.$row[0].');" class="ibm-setting-link"><i class="glyphicon glyphicon-cog" style="font-size:1.5em;"></i></a></td><td align="center">' .
+            echo '<td align="center" class="ibm-ind-link"><a href="#" onclick="javascript:modi('.$row[0].');" class="ibm-setting-link"></a></td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .

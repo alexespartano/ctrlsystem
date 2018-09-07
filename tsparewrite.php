@@ -21,13 +21,12 @@ $quantw = strtoupper($_POST['QUAN']);
 $minw = strtoupper($_POST['MIN']);
 $maxw = strtoupper($_POST['MAX']);
 $stow = strtoupper($_POST['STOCK']);
-$staw = strtoupper($_POST['STAT']);
 $modw = strtoupper($_POST['MODEL']);
 $linw = $_POST['LINK'];
 $madew = strtoupper($_POST['MADE']);
 
       require_once('connectsys.php');
-        $query = 'UPDATE CTRLSYSTEM.TSPARE SET "UBI"='."'$ubiw'".',"BRAND"='."'$brandw'".',"DESC"='."'$itemw'".',"QUANTI"='."'$quantw'".',"MIN"='."'$minw'".',"MAX"='."'$maxw'".',"STOCK"='."'$stow'".',"STAT"='."'$staw'".',"MODEL"='."'$modw'".',"LINK"='."'$linw'".',"MARC"='."'$madew'".' WHERE "ID"='.$idw;
+        $query = 'UPDATE CTRLSYSTEM.TSPARE SET "UBI"='."'$ubiw'".',"BRAND"='."'$brandw'".',"DESC"='."'$itemw'".',"QUANTI"='."'$quantw'".',"MIN"='."'$minw'".',"MAX"='."'$maxw'".',"STOCK"='."'$stow'".',"STAT"='."'N/A'".',"MODEL"='."'$modw'".',"LINK"='."'$linw'".',"MARC"='."'$madew'".' WHERE "ID"='.$idw;
             $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -44,7 +43,7 @@ $madew = strtoupper($_POST['MADE']);
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Part Added</title>
+    <title>Part Modified</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -62,7 +61,7 @@ $madew = strtoupper($_POST['MADE']);
                     <form action="#" method="post" class="ibm-row-form">
                       <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                <p>Part Added</p>
+                <p>Part Modified</p>
             </div>
         </div>          
         <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
