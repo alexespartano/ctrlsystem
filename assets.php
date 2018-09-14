@@ -203,7 +203,7 @@ if($div != "IT"){
 </select>
 </div> 
 <div class="ibm-col-6-2  ibm-nospacing">
-    <span class="ibm-ind-link ibm-btn-row"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" href="#" onClick="window.location.reload()">Refresh</a><a class="ibm-search-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="filter2()">Search</a><a class="ibm-calculator-link ibm-btn-sec ibm-btn-blue-50">Items:<b id="con"></b></a></span>
+    <span class="ibm-ind-link ibm-btn-row"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" href="#" onClick="window.location.reload()">Refresh</a><a class="ibm-search-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="filter2()">Search</a><a class="ibm-calculator-link ibm-btn-sec ibm-btn-blue-50">Items:<b id="con"></b></a><a class="ibm-information-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:stats();">PC Stats</a></span>
 </div>
 </form>
 </div>
@@ -292,6 +292,9 @@ if($div != "IT"){
 <script>
 function modi(id){
     win2 = window.open('mod.php?id='+id,'Modifica_U','scrollbars=no,top=20,left=500,width=750,height=750');    
+}
+function stats(){
+   win1 = window.open('stats.php','Modifica_U','scrollbars=no,top=20,left=250,width=950,height=800');
 }
 </script>
   </body>

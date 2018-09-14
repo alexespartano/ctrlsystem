@@ -1,16 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Log In</title>
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body background="img/Background-Picture-Html.jpg">
 <?php
 /*Desarrollado por Alejandro Romero Aldrete*/
 session_start();
@@ -25,9 +12,9 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
     if (!$result) {
          echo "exec errormsg: " .db2_stmt_errormsg($stmt);
           exit;
-      }
+        }
    }else{
-    echo "<p>Failed conexccion.</p>";
+    echo "<p>Failed coneccion.</p>";
     exit;
    }
    $division = "";
@@ -40,8 +27,8 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
               if($division == "IT"){
                          header("location: main.php");
                         }
-              if($division == "GERENCIA"){
-                         header("location: viewer.php");
+                        if($division == "TOOL"){
+                         header("location: toolspare.php");
                         }
                          if($division == "MANUFACTURA"){
                          header("location: diskfile.php");
@@ -56,44 +43,83 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
   exit;
 }
 ?>
-<div class="row" id="header">
-	<div class="col-sm-4">
-	  <p class="introbar"> <img class="img-responsive" src="img/ibm-logo-png-transparent-background.png" height="200" width="200"></p></div>
-	<div class="col-sm-4"><p class="introbar" align="center" title="Desarrollado por Alejandro Romero Aldrete">CTRL SYSTEM</p></div>
-	<div class="col-sm-4"><p class="introbar"></p></div>
-</div>
-<div class="container">
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+    <meta charset="utf-8"/>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+    <meta name="geo.country" content="US" />  
+    <title>LogIn</title>
+    
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
 
-<div class="row">
- <div class="col-sm-4"></div>
-  <div class="col-sm-4" id="formbox">
-   <form action="process.php" method="post">
-   <div class="form-group-sm">
- <br>
-   <div class="input-group input-group-lg">
-  <span class="input-group-addon">
-    <span class="glyphicon glyphicon-user"></span>
-  </span>
-  <input class="form-control" type="text" placeholder="User Name" name="User">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+      <nav role="navigation" aria-label="NAV">
+        <div class="ibm-sitenav-menu-container">
+            <div class="ibm-sitenav-menu-name">
+                <div id="ibm-home"><a href="main.php">IBM®</a></div>
+                </div> 
+        </div>
+    </nav>
+        <main role="main" aria-labelledby="ibm-pagetitle-h1" class="ibm-band">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+       <br>
+      <br>
+      <br>
+      <div class="ibm-columns" data-items=".ibm-card" data-widget="setsameheight">
+        <div class="ibm-col-12-4"></div>
+    <div class="ibm-col-12-4 ibm-col-medium-6-2 ibm-center">
+        <div class="ibm-card">
+            <div class="ibm-card__content">
+              <p class="ibm-center"><h1 class="ibm-h2 ibm-textcolor-red-50">USER/PASSWORD: INVALID. TRY AGAIN</h1></p>
+                <p class="ibm-center"><h3 class="ibm-h3">CTRLSYSTEM</h3></p>
+                <p></p>
+               <form action="process.php" method="post" class="ibm-row-form">
+                     <p class="ibm-icon-nolink ibm-profile-link"><input type="text" size="40" id="us" name="User" placeholder="Username" autofocus></p>
+                    <p></p>
+                     <p class="ibm-icon-nolink ibm-password-link"><input type="password" name="pwd" placeholder="Password" size="40" id="pa"></p>
+                    <p class="ibm-center"><button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent" name="log"><a class="ibm-confirm-link">LogIn</a></button></p>
+          </form>
+            </div>
+        </div>
     </div>
+</div>
+    
+      <br><br><br><br><br><br><br><br>
+        </main>
+      </div>
     </div>
-        
-<div class="form-group-sm">
-<br>        
-<div class="input-group input-group-lg">
-  <span class="input-group-addon">
-    <span class="glyphicon glyphicon-lock"></span>
-  </span>
-  <input class="form-control" type="password" placeholder="Password" name="pwd">
-    </div> 
-    </div>
-        <br>
-    <button type="submit" class="btn btn-default" id="formsubmit" name="log">LOGIN</button>
-    <p id="alert">USER/PASSWORD: INVALID. TRY AGAIN</p>
-   </form>
-  </div>
-  <div class="col-sm-4"></div>
+
+  </body>
+      <br>
+  <br>
+  <br>
+<div class="ibm-columns">
+  <div class="ibm-col-12-9"></div>
+  <div class="ibm-col-12-3 ibm-right">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="ibm-ind-link"><a class="ibm-email-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-help-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
+  <div class="ibm-common-overlay  ibm-overlay-alt" data-widget="overlay" id="overlayExampleSmall">
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">gilbusta@mx1.ibm.com Gilberto Bustamante Sanchez</a></p>
 </div>
 </div>
-</body>
+</div>
 </html>
