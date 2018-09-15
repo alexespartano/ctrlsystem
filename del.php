@@ -269,15 +269,9 @@ $id=strtoupper($_GET['id']);
           ?></label>
             </div>
         </div>
-            <div class="ibm-columns">
-                <div class="ibm-col-1-1 ibm-center">
-                <label for="cme">Comments:</label>
-                      <input type="text" name="comments" maxlength="28" id="cme"></div>
-
-            </div>
         <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-save-link">Save</a></button>
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-close-link">Save</a></button>
             </div>
         </div> 
 
