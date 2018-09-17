@@ -112,7 +112,7 @@ if($div != "IT"){
             ?>
             </datalist>
             <br>
-            <button type="button" class="ibm-btn-pri ibm-btn-blue-50" name="submit">Submit</button>
+            <button type="submit" class="ibm-btn-pri ibm-btn-blue-50" name="submit">Submit</button>
     </form>
                   </div>
 
@@ -124,7 +124,6 @@ if($div != "IT"){
         </main>
       <?php 
     if(isset($_POST['submit']) && strlen($_POST['serial']) > 0){
-      $answer = $_POST['type'];
         $sn = trim(strtoupper($_POST['serial'])); 
         $month =  (new \DateTime())->format('m');
             require_once('connectsys.php');
