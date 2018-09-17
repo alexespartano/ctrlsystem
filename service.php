@@ -93,8 +93,8 @@ if($div != "IT"){
   <br>
        <form action="service.php" method="post" class="ibm-row-form">
       <label for="ite">Serial Number for Maintenance</label>
-      <input type="text" name="sn"  size="30" placeholder="Serial Number" class="form-control" style="max-width: 80%;" list="ser" id="ite">
-      <datalist id="ser">
+      <input type="text" name="serial"  size="30" placeholder="Serial Number" style="max-width: 80%;" list="sn" id="ite">
+      <datalist id="sn">
                     <?php
             require_once('connectsys.php');
             $query = 'SELECT "S/N" FROM CTRLSYSTEM.INV GROUP BY "S/N"';
@@ -112,7 +112,7 @@ if($div != "IT"){
             ?>
             </datalist>
             <br>
-            <button type="button" class="ibm-btn-pri ibm-btn-blue-50">Submit</button>
+            <button type="button" class="ibm-btn-pri ibm-btn-blue-50" name="submit">Submit</button>
     </form>
                   </div>
 
