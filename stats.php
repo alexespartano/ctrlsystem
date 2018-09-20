@@ -51,8 +51,8 @@ if($div != "IT"){
         </div>
         <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1" id="2">
-              <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-btn-small"><a class="ibm-confirm-link  ibm-btn-sec" href="PCstats.jar">Yes</a></button>
-                <b class="ibm-ind-link"><a class="ibm-close-link  ibm-btn-pri" href="javascript:close()">No</a></b>
+              <b class="ibm-ind-link"><a class="ibm-download-link  ibm-btn-sec" href="PCstats.jar">Download</a></b>
+                <b class="ibm-ind-link"><a class="ibm-close-link  ibm-btn-pri" href="javascript:close()">Exit</a></b>
             </div>
         </div> 
     

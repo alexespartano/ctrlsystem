@@ -271,7 +271,7 @@ $id=strtoupper($_GET['id']);
         </div>
         <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-close-link">Save</a></button>
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-close-link">DELETE</a></button>
             </div>
         </div> 
 
