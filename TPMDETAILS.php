@@ -10,7 +10,7 @@ $user = strtoupper($_SESSION['username']);
 if($user == "GERENCIA"){
 }else{
  require_once('authorized.php');
- if($div != "IT"){
+ if($div != "IT" || $div != "TOOL"){
  header("location: index.php");
 }
 }
@@ -54,10 +54,11 @@ if($user == "GERENCIA"){
             <div class="ibm-sitenav-menu-list">
                 <ul role="menubar">
 
-                  <?php
-                  if($user != "GERENCIA"){
-                    echo '<li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
-                        <ul role="menu" aria-label="Assets">
+                   <?php
+                        if($div != "IT"){
+                          echo '
+                    <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
+                          <ul role="menu" aria-label="Assets">
                             <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
                             <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
                             <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
@@ -69,13 +70,18 @@ if($user == "GERENCIA"){
                      <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
                        <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>';
+
                      }else{
-                       echo '<li role="presentation"><a role="menuitem" href="viewer.php">Ctrl of Assets</a></li>
-                    <li role="presentation"><a role="menuitem" href="recG.php">Records</a></li>
-                    <li role="presentation"><a role="menuitem" href="mttoG.php">Calendar of Maintenance</a></li>
-                      <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>';
+                      echo '<li role="presentation"><a role="menuitem" href="tassets.php">Assets</a></li>
+                    <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem"  href="tservice.php">Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation"><a role="menuitem" href="toolspare.php">Spare Parts</a></li>';
                      }
-                          ?>
+
+?>
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
@@ -108,7 +114,7 @@ if($user == "GERENCIA"){
        <canvas id="myChart" width="400" height="240"></canvas>
     </div>
     <div class="ibm-col-12-6" data-widget="scrollable" data-height="500">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="Y" cellspacing="0" cellpadding="0" border="0">
+    <table class="ibm-data-table ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="Y" cellspacing="0" cellpadding="0" border="0">
          <thead>
         <tr>   
                     <th>LOCATION</th>

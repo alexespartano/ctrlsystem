@@ -46,7 +46,13 @@ if($div != "TOOL"){
                 <a href="main.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
             <div class="ibm-sitenav-menu-list">
                 <ul role="menubar">
-                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>
+                    <li role="presentation"><a role="menuitem" href="tassets.php">Asset's</a></li>
+                    <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem"  href="tservice.php">Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation"><a role="menuitem" href="toolspare.php">Spare Parts</a></li>
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>

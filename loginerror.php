@@ -28,7 +28,7 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
                          header("location: main.php");
                         }
                         if($division == "TOOL"){
-                         header("location: toolspare.php");
+                         header("location: tmain.php");
                         }
                          if($division == "MANUFACTURA"){
                          header("location: diskfile.php");

@@ -7,7 +7,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }else{
  require_once('authorized.php');
-if($div != "IT"){
+if($div != "IT" && $div != "TOOL"){
  header("location: index.php");
 }
 }
@@ -54,8 +54,11 @@ if($div != "IT"){
                 <a href="main.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
             <div class="ibm-sitenav-menu-list">
                 <ul role="menubar">
+                   <?php
+                        if($div == "IT"){
+                          echo '
                     <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
-                        <ul role="menu" aria-label="Assets">
+                          <ul role="menu" aria-label="Assets">
                             <li role="presentation"><a role="menuitem" href="assets.php">View/Modify</a></li>
                             <li role="presentation"><a role="menuitem" href="peradd.php">Add</a></li>
                             <li role="presentation"><a role="menuitem" href="perdel.php">Delete</a></li>
@@ -66,7 +69,19 @@ if($div != "IT"){
                     <li role="presentation"><a role="menuitem" href="mttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="tools.php">Tools</a></li>
                       <li role="presentation" class="ibm-highlight"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
-                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li> 
+                       <li role="presentation"><a role="menuitem" href="spareparts.php">Spare Parts</a></li>';
+
+                     }else{
+                      echo '<li role="presentation"><a role="menuitem" href="tassets.php">Assets</a></li>
+                    <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem"  href="tservice.php">Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation"><a role="menuitem" href="toolspare.php">Spare Parts</a></li>';
+                     }
+
+?>
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
@@ -112,7 +127,7 @@ if($div != "IT"){
     </div>  
      <div class="ibm-col-12-1"></div>
     <div class="ibm-col-12-4" data-widget="scrollable" data-height="500">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="Y" cellspacing="0" cellpadding="0" border="0">
+    <table class="ibm-data-table ibm-padding-small ibm-center ibm-center-block" id="myTable" data-scrollaxis="Y" cellspacing="0" cellpadding="0" border="0">
           <thead>
         <tr>
                     <th>AREA</th>
