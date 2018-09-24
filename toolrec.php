@@ -84,7 +84,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Record of Transactions</h3>
-                <p>Add and Delete Transactions</p>
+                <p>Add,Delete,Modify Transactions</p>
                <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="ttransrec.php">Go ahead</a></p>
             </div>
         </div>
