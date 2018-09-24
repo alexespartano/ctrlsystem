@@ -11,17 +11,20 @@ if($div != "TOOL"){
  header("location: index.php");
 }
 }
-$desc= strtoupper($_POST['tdesc']);    
-      require_once('connectsys.php');
-        $query = 'DELETE FROM CTRLSYSTEM.TSPARE WHERE "DESC" = '."'$desc'";
-            $stmt = db2_prepare($db2, $query);
+
+$idw = strtoupper($_POST['identy']);
+$commentsw = strtoupper($_POST['comments']);
+                  require_once('connectsys.php');
+      $query = 'UPDATE CTRLSYSTEM.TINV SET "COMMENTS" = \''.$commentsw.'\' WHERE ID='.$idw;
+                             $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
                         if (!$result) {
                              echo "exec errormsg: " .db2_stmt_errormsg($stmt);
                             exit;
                           }
-               }
+                        }
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US" >
@@ -30,7 +33,7 @@ $desc= strtoupper($_POST['tdesc']);
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Part Deleted</title>
+    <title>Modifier</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -48,12 +51,12 @@ $desc= strtoupper($_POST['tdesc']);
                     <form action="#" method="post" class="ibm-row-form">
                       <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                <p>Part Deleted</p>
+                <p>Modifier</p>
             </div>
         </div>          
         <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
             <div class="ibm-col-6-6">
-                <p class=" ibm-h1 ibm-center">Part Deleted From SparePart's</p>
+                <p class=" ibm-h1 ibm-center">Item Modified</p>
                 </div>
         </div>
         <div class="ibm-columns ibm-center">
@@ -66,6 +69,5 @@ $desc= strtoupper($_POST['tdesc']);
         </main>
       </div>
     </div>
-
   </body>
 </html>

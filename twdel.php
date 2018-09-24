@@ -11,9 +11,49 @@ if($div != "TOOL"){
  header("location: index.php");
 }
 }
-$desc= strtoupper($_POST['tdesc']);    
-      require_once('connectsys.php');
-        $query = 'DELETE FROM CTRLSYSTEM.TSPARE WHERE "DESC" = '."'$desc'";
+$sn= strtoupper($_POST['tsn']);    
+$brand="";
+$type="";
+ require_once('connectsys.php');
+      $queryid = 'SELECT "BRAND","TYPE" FROM CTRLSYSTEM.TINV WHERE "SN"='."'$sn'";
+            $stmt = db2_prepare($db2, $queryid);
+            if($stmt){
+              $result = db2_execute($stmt);
+              if (!$result) {
+                echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                exit;
+                }
+              while($row = db2_fetch_array($stmt)){
+               $brand=$row[0];
+               $type=$row[1];
+                }
+            } 
+$num=0;
+    require_once('connectsys.php');
+      $queryid = "SELECT ID FROM CTRLSYSTEM.TRECTRANS ORDER BY ID DESC LIMIT 1 ";
+            $stmt = db2_prepare($db2, $queryid);
+            if($stmt){
+              $result = db2_execute($stmt);
+              if (!$result) {
+                echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                exit;
+                }
+              while($row = db2_fetch_array($stmt)){
+                $num=$row[0] + 1;
+                }
+            } 
+            if($num==0){
+              $num=1;
+            }  
+   $date = new DateTime();
+        $date =  $date->format('Y-m-d');
+                $date=substr($date,2);
+                $date=str_replace('-','/',$date);
+                  $I = strtoupper($_SESSION['username']);
+$descrip= "DELETE";
+ require_once('connectsys.php');
+   $query = 'INSERT INTO CTRLSYSTEM.TRECTRANS ("BRAND","TYPE","SN","ING","DATE","ACCION","ID")
+                                               VALUES ('."'$brand'".','."'$type'".','."'$sn'".','."'$I'".','."'$date'".','."'$descrip'".','.$num.')';
             $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -22,6 +62,20 @@ $desc= strtoupper($_POST['tdesc']);
                             exit;
                           }
                }
+
+
+      require_once('connectsys.php');
+        $query = 'DELETE FROM CTRLSYSTEM.TINV WHERE "SN" = '."'$sn'";
+            $stmt = db2_prepare($db2, $query);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+               }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US" >
@@ -30,7 +84,7 @@ $desc= strtoupper($_POST['tdesc']);
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Part Deleted</title>
+    <title>Asset Deleted</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -48,12 +102,12 @@ $desc= strtoupper($_POST['tdesc']);
                     <form action="#" method="post" class="ibm-row-form">
                       <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                <p>Part Deleted</p>
+                <p>Asset Deleted</p>
             </div>
         </div>          
         <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
             <div class="ibm-col-6-6">
-                <p class=" ibm-h1 ibm-center">Part Deleted From SparePart's</p>
+                <p class=" ibm-h1 ibm-center">Asset Deleted From Inventory</p>
                 </div>
         </div>
         <div class="ibm-columns ibm-center">

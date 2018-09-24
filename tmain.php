@@ -37,7 +37,6 @@ if($div != "TOOL"){
 
                     <li role="presentation"><a role="menuitem" href="tassets.php">Asset's</a></li>
                     <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
-                    <li role="presentation"><a role="menuitem"  href="tservice.php">Services</a></li>
                     <li role="presentation"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
                       <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>

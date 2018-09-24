@@ -10,19 +10,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 if($div != "TOOL"){
  header("location: index.php");
 }
-}
-$desc= strtoupper($_POST['tdesc']);    
-      require_once('connectsys.php');
-        $query = 'DELETE FROM CTRLSYSTEM.TSPARE WHERE "DESC" = '."'$desc'";
-            $stmt = db2_prepare($db2, $query);
-                    if($stmt){
-                        $result = db2_execute($stmt);
-                        if (!$result) {
-                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-                            exit;
-                          }
-               }
-?>
+}?>
 <!DOCTYPE html>
 <html lang="en-US" >
 <head>
@@ -30,8 +18,7 @@ $desc= strtoupper($_POST['tdesc']);
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Part Deleted</title>
-    
+    <title>Delete Asset</title>
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
     <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
@@ -45,21 +32,38 @@ $desc= strtoupper($_POST['tdesc']);
   <body id="ibm-com" class="ibm-type">
     <div id="ibm-top" class="ibm-landing-page">
         <main role="main" aria-labelledby="ibm-pagetitle-h1">
-                    <form action="#" method="post" class="ibm-row-form">
+                    <form action="twdel.php" method="post" class="ibm-row-form">
                       <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-                <p>Part Deleted</p>
+                <p>Delete Asset</p>
             </div>
         </div>          
         <div class="ibm-columns ibm-seamless ibm-padding-bottom-0">
-            <div class="ibm-col-6-6">
-                <p class=" ibm-h1 ibm-center">Part Deleted From SparePart's</p>
+            <div class="ibm-col-1-1 ibm-center">
+                <label for="I">Item:<span class="ibm-required">*</span></label>
+                <select id="I" name="tsn">
+                <option value=""></option>
+                <?php
+                    require_once('connectsys.php');
+                    $query = 'SELECT "SN" FROM CTRLSYSTEM.TINV GROUP BY "SN"';
+                    $stmt = db2_prepare($db2, $query);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
+                    }   
+                }
+                    ?>
+            </select>
                 </div>
         </div>
         <div class="ibm-columns ibm-center">
             <div class="ibm-col-1-1">
-              <p class="ibm-ind-link"><a class="ibm-confirm-link ibm-btn-sec" href="javascript:close()">Close Window</a></p>
-     </span>
+                 <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-fullwidth" name="but"><a class="ibm-close-link">Delete</a></button>
             </div>
         </div> 
     </form>       

@@ -6,13 +6,9 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: index.php");
   exit;
 }else{
-$user = strtoupper($_SESSION['username']);
-if($user == "GERENCIA"){
-}else{
  require_once('authorized.php');
- if($div != "IT" || $div != "TOOL"){
+if($div != "IT" && $div != "TOOL"){
  header("location: index.php");
-}
 }
 }
 ?>
@@ -55,7 +51,7 @@ if($user == "GERENCIA"){
                 <ul role="menubar">
 
                    <?php
-                        if($div != "IT"){
+                        if($div == "IT"){
                           echo '
                     <li role="presentation" class="ibm-haschildlist"><button role="menuitem">Ctrl of Assets</button>
                           <ul role="menu" aria-label="Assets">
@@ -74,7 +70,6 @@ if($user == "GERENCIA"){
                      }else{
                       echo '<li role="presentation"><a role="menuitem" href="tassets.php">Assets</a></li>
                     <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
-                    <li role="presentation"><a role="menuitem"  href="tservice.php">Services</a></li>
                     <li role="presentation"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
                      <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
                       <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
