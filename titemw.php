@@ -33,5 +33,41 @@ if($div != "TOOL"){
                   exit;
                 } 
             }
+            //record of transaction
+            $num=0;
+    require_once('connectsys.php');
+      $queryid = "SELECT ID FROM CTRLSYSTEM.TRECTRANS ORDER BY ID DESC LIMIT 1 ";
+            $stmt = db2_prepare($db2, $queryid);
+            if($stmt){
+              $result = db2_execute($stmt);
+              if (!$result) {
+                echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                exit;
+                }
+              while($row = db2_fetch_array($stmt)){
+                $num=$row[0] + 1;
+                }
+            } 
+            if($num==0){
+              $num=1;
+            }  
+   $date = new DateTime();
+        $date =  $date->format('Y-m-d');
+                $date=substr($date,2);
+                $date=str_replace('-','/',$date);
+                  $I = strtoupper($_SESSION['username']);
+$descrip= "MODIFIED BY TOOLS";
+ require_once('connectsys.php');
+   $query = 'INSERT INTO CTRLSYSTEM.TRECTRANS ("BRAND","TYPE","SN","ING","DATE","ACCION","ID")
+                                               VALUES ('."'$upbrand'".','."'$uptype'".','."'$upsn'".','."'$I'".','."'$date'".','."'$descrip'".','.$num.')';
+            $stmt = db2_prepare($db2, $query);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+               }
+
             header("location: ttools.php");
               ?>
