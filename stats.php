@@ -5,10 +5,6 @@ session_start();
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: index.php");
   exit;
-}else{
- require_once('authorized.php');
-if($div != "IT"){
- header("location: index.php");
 }
 }
 ?>
