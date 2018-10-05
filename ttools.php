@@ -85,21 +85,43 @@ if($div != "TOOL"){
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Download DB's</h3>
                 <p>Get a Copy of Inv or Records DB'S</p>
-              <!-- <span class="ibm-ind-link"><a class="ibm-download-link ibm-btn-sec ibm-btn-blue-50" href="download.php">INV DB</a> &nbsp;<a class="ibm-download-link ibm-btn-sec ibm-btn-blue-50" href="downloadrecords.php">Records DB</a></span>-->
+                <span class="ibm-ind-link">
+                     &nbsp;<a class="ibm-download-link ibm-btn-sec ibm-btn-blue-50" href="tdownload.php">INV DB</a> 
+                     <p>
+
+                     &nbsp;<a  class="ibm-download-link ibm-btn-sec ibm-btn-blue-50 ibm-center" href="trectransdb.php">     Record of Transactions DB</a>
+                     &nbsp;<a  class="ibm-download-link ibm-btn-sec ibm-btn-blue-50 ibm-center" href="tdownloadrecords.php">Control Ingenieria Equipos DB</a>
+                     &nbsp;<a  class="ibm-download-link ibm-btn-sec ibm-btn-blue-50 ibm-center" href="trecmiedb.php">       Record of Preventive Maintenance DB</a>
+                     &nbsp;<a  class="ibm-download-link ibm-btn-sec ibm-btn-blue-50 ibm-center" href="trecmsdb.php">        Record of ESD Measures DB</a>
+                     &nbsp;<a  class="ibm-download-link ibm-btn-sec ibm-btn-blue-50 ibm-center" href="trecrpdb.php">        Record of Preventive Checkout DB</a>
+
+
+               </span>
             </div>
         </div>
   </div>
+
     <div class="ibm-col-6-2">
         <div class="ibm-card">
             <div class="ibm-card__content">
                 <h3 class="ibm-h3">Delete Records DB's</h3>
                 <br>
-               <!--  <span class="ibm-ind-link"><a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:delrec();">Records DB</a> &nbsp;<a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#"  onclick="javascript:delmfsrec();">MFS Records DB</a></span>-->
+                 <span class="ibm-ind-link">
+                  <p>
+                  <p>
+                  <a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:deltrectrans();">  Record of Transactions DB</a> &nbsp;
+                  <a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:deltreccie();">Control Ingenieria Equipos DB</a>&nbsp;
+                  <a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:deltrecmie();">Record of Preventive Maintenance DB</a>&nbsp;
+                  <a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:deltrems();">Record of ESD Measures DB</a>&nbsp;
+                  <a class="ibm-close-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="javascript:deltrecrp();">Record of Preventive Checkout DB</a>&nbsp;
+
+
+                                          </span>
             </div>
         </div>
     </div>
-</div>
-<div class="ibm-columns">
+
+
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
@@ -129,12 +151,39 @@ if($div != "TOOL"){
     </form>
             </div>
         </div>
+  
   </div>
 </div>
               </div>
             </div>
           </div>
         </main>
+
+
+
+
+ <script>
+function deltrectrans(){
+  win1 = window.open('deltrectrans.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=500');  
+}
+function deltreccie(){
+  win2 = window.open('deltreccie.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=500');  
+}
+function deltrecmie(){
+  win3 = window.open('deltrecmie.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=500');  
+}
+function deltrems(){
+  win4 = window.open('deltrems.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=500');  
+}
+function deltrecrp (){
+  win5 = window.open('deltrecrp.php','Modifica_U','scrollbars=no,top=220,left=500,width=700,height=500');  
+}
+
+
+
+</script>
+
+
   </body>
     <br>
   <br>
