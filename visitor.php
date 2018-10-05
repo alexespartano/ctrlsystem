@@ -192,6 +192,8 @@ if($div != "VISITOR"){
   <option value="ING1">ING1</option>
   <option value="ING2">ING2</option>
   <option value="ING3">ING3</option>
+   <option value="ING4">ING4</option>
+    <option value="ING4">ING5</option>
 </select>
 </div> 
 <div class="ibm-col-6-2  ibm-nospacing">

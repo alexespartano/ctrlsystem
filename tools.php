@@ -7,7 +7,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }else{
  require_once('authorized.php');
-if($div != "IT"){
+if($div != "IT" || strtoupper($_SESSION['username'])=="ING5" || strtoupper($_SESSION['username'])=="ING4" ){
  header("location: index.php");
 }
 }
