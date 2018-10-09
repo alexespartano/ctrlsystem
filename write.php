@@ -41,7 +41,7 @@ $commentsw = strtoupper($_POST['comments']);
                     if($stau == $statusw){
                       //ALMACENADO Y PERMANECIO AHI SOLO MODIFICA COMENTARIOS.
                       require_once('connectsys.php');
-			$query = 'UPDATE CTRLSYSTEM.INV SET "LOCATION" = \'IT\', "COMMENTS" = \''.$commentsw.'\' WHERE ID='.$idw;
+			$query = 'UPDATE CTRLSYSTEM.INV SET "LOCATION" = \''.$locationw.'\', "COMMENTS" = \''.$commentsw.'\' WHERE ID='.$idw;
                              $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -200,8 +200,22 @@ $commentsw = strtoupper($_POST['comments']);
                                     db2_close($db2);                     
                                 }
                         }else{
-                            //asignamos a oscar el equipo
-                             require_once('connectsys.php');
+                            //asignamos a it el equipo
+                          $divis="";
+                               require_once('connectsys.php');
+        $DI = 'SELECT "DIVISION" FROM CTRLSYSTEM.INV WHERE "ID"='.$idw;
+            $stmt = db2_prepare($db2, $DI);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $divis = $row[0];
+                    }   
+                          if($divis=="IT"){
+                                require_once('connectsys.php');
                              $query = 'UPDATE CTRLSYSTEM.INV SET "LOCATION" = \'IT\', "AREA" = \'ALMACEN IT\', "BRAND" = \'ALMACEN IT\', "RESPONSIBLE" = \'OSCAR MICHEL\', "STAT" = \'AL\', "PHYSICAL INV" = \''.$physicalinvw.'\', "RFID S/N" = \''.$rfidw.'\', "COMMENTS" = \''.$commentsw.'\', "ING" = \'N/A\', "FECHA MATTO" = \'N/A\' WHERE ID='.$idw;
                               $stmt = db2_prepare($db2, $query);
                               if($stmt){
@@ -211,7 +225,20 @@ $commentsw = strtoupper($_POST['comments']);
                                     exit;
                                     }
                                     }
-                                    db2_close($db2);  
+                                    db2_close($db2); 
+                          }else{
+                            require_once('connectsys.php');
+                             $query = 'UPDATE CTRLSYSTEM.INV SET "LOCATION" = \'XIV\', "AREA" = \'ALMACEN IT\', "BRAND" = \'ALMACEN IT\', "RESPONSIBLE" = \'MARIO VAZQUEZ\', "STAT" = \'AL\', "PHYSICAL INV" = \''.$physicalinvw.'\', "RFID S/N" = \''.$rfidw.'\', "COMMENTS" = \''.$commentsw.'\', "ING" = \'N/A\', "FECHA MATTO" = \'N/A\' WHERE ID='.$idw;
+                              $stmt = db2_prepare($db2, $query);
+                              if($stmt){
+                                  $result = db2_execute($stmt);
+                                  if (!$result) {
+                                    echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                                    exit;
+                                    }
+                                    }
+                                    db2_close($db2); 
+                          }
              $recfecha = new DateTime();
         $recfecha =  $recfecha->format('Y-m-d');
                 $recfecha=substr($recfecha,2);
