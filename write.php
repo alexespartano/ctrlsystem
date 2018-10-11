@@ -213,7 +213,8 @@ $commentsw = strtoupper($_POST['comments']);
                           }
                 while($row = db2_fetch_array($stmt)){
                     $divis = $row[0];
-                    }   
+                    }}
+                       
                           if($divis=="IT"){
                                 require_once('connectsys.php');
                              $query = 'UPDATE CTRLSYSTEM.INV SET "LOCATION" = \'IT\', "AREA" = \'ALMACEN IT\', "BRAND" = \'ALMACEN IT\', "RESPONSIBLE" = \'OSCAR MICHEL\', "STAT" = \'AL\', "PHYSICAL INV" = \''.$physicalinvw.'\', "RFID S/N" = \''.$rfidw.'\', "COMMENTS" = \''.$commentsw.'\', "ING" = \'N/A\', "FECHA MATTO" = \'N/A\' WHERE ID='.$idw;
