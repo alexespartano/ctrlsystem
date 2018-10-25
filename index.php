@@ -6,7 +6,7 @@ session_start();
 if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
   $user = strtoupper($_SESSION['username']);
    require_once('connectsys.php'); #db2 variable
-   $sql = "SELECT DIVISION FROM CTRLSYSTEM.USERS WHERE USERNAME = '$user'";
+   $sql = "SELECT DIVISION FROM CTRLSYSTEM.USERSS WHERE USERNAME = '$user'";
    $stmt = db2_prepare($db2, $sql);
    if($stmt){
    $result = db2_execute($stmt);

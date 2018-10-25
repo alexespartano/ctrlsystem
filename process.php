@@ -8,7 +8,7 @@ $password = "";
 if(isset($_POST['log'])) {
 	$username = strtoupper($_POST['User']);
 	$password = strtoupper($_POST['pwd']);
-    $sql = "SELECT DIVISION FROM CTRLSYSTEM.USERS WHERE USERNAME = '$username' AND PASSWORD = '$password'";
+    $sql = "SELECT DIVISION FROM CTRLSYSTEM.USERSS WHERE USERNAME = '$username' AND PASSWORD = '$password'";
     $stmt = db2_prepare($db2, $sql);
     if($stmt){
     $result = db2_execute($stmt);

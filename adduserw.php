@@ -4,7 +4,7 @@
              $pass=strtoupper($_POST['pass']);
              $num =0;
  require_once('connectsys.php');
-            $queryid = "SELECT ID FROM CTRLSYSTEM.USERS ORDER BY ID DESC LIMIT 1";
+            $queryid = "SELECT ID FROM CTRLSYSTEM.USERSS ORDER BY ID DESC LIMIT 1";
             $stmt = db2_prepare($db2, $queryid);
             if($stmt){
               $result = db2_execute($stmt);
@@ -17,7 +17,7 @@
                 }
             }
              require_once('connectsys.php');
-              $tru = 'INSERT INTO CTRLSYSTEM.USERS ("USERNAME", "PASSWORD", "DIVISION", "ROL", "ID") VALUES ('."'$user'".', '."'$pass'".','."'MFG'".', '."'MFG'".' ,'.$num.')';
+              $tru = 'INSERT INTO CTRLSYSTEM.USERSS ("USERNAME", "PASSWORD", "DIVISION", "ROL", "ID") VALUES ('."'$user'".', '."'$pass'".','."'MFG'".', '."'MFG'".' ,'.$num.')';
               $stmt = db2_prepare($db2, $tru);
               if($stmt){
                 $result = db2_execute($stmt);
@@ -48,7 +48,7 @@ if($div != "IT"){
              $pass=strtoupper($_POST['pass']);
              $num =0;
  require_once('connectsys.php');
-            $queryid = "SELECT ID FROM CTRLSYSTEM.USERS ORDER BY ID DESC LIMIT 1";
+            $queryid = "SELECT ID FROM CTRLSYSTEM.USERSS ORDER BY ID DESC LIMIT 1";
             $stmt = db2_prepare($db2, $queryid);
             if($stmt){
               $result = db2_execute($stmt);
@@ -61,7 +61,7 @@ if($div != "IT"){
                 }
             }
              require_once('connectsys.php');
-              $tru = 'INSERT INTO CTRLSYSTEM.USERS ("USERNAME", "PASSWORD", "DIVISION", "ROL", "ID") VALUES ('."'$user'".', '."'$pass'".','."'MFG'".', '."'MFG'".' ,'.$num.')';
+              $tru = 'INSERT INTO CTRLSYSTEM.USERSS ("USERNAME", "PASSWORD", "DIVISION", "ROL", "ID") VALUES ('."'$user'".', '."'$pass'".','."'MFG'".', '."'MFG'".' ,'.$num.')';
               $stmt = db2_prepare($db2, $tru);
               if($stmt){
                 $result = db2_execute($stmt);

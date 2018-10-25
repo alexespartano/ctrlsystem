@@ -95,7 +95,7 @@ if($div != "IT"){
                             <option value="">USER</option>
                                  <?php
                                  require_once('connectsys.php');
-                    $query = 'SELECT "USERNAME" FROM CTRLSYSTEM.USERS WHERE "ROL"='."'MFG'";
+                    $query = 'SELECT "USERNAME" FROM CTRLSYSTEM.USERSS WHERE "ROL"='."'MFG'";
                     $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);

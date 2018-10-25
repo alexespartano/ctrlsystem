@@ -15,7 +15,7 @@ if($div != "IT"){
 
              $userr=strtoupper($_POST['user']);
              require_once('connectsys.php');
-              $tru = 'DELETE FROM CTRLSYSTEM.USERS WHERE "USERNAME"='."'$userr'";
+              $tru = 'DELETE FROM CTRLSYSTEM.USERSS WHERE "USERNAME"='."'$userr'";
               $stmt = db2_prepare($db2, $tru);
               if($stmt){
                 $result = db2_execute($stmt);
