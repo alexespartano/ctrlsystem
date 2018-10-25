@@ -240,8 +240,8 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
-                        barThickness : 15,
-                        barPercentage: 0,
+                        barThickness : 7,
+                        barPercentage: 5,
                 ticks: {
                       padding: 5,
                       fontSize: 9
@@ -251,7 +251,7 @@ var myChart = new Chart(ctx, {
             ticks: {
               beginAtZero:true,
                 fontSize: 10,
-                padding: 5
+                padding: 1
             }
         }]
         },

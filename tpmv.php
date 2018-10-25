@@ -107,7 +107,7 @@ if($div != "VISITOR"){
             $names=array();
             $porce=array();
             require_once('connectsys.php');
-            $query = 'SELECT DISTINCT "AREA" FROM CTRLSYSTEM.TPM WHERE "AREA" NOT LIKE \'ALMACEN IT\' AND "AREA" NOT LIKE \'KELLY\' AND "AREA" NOT LIKE \'CONTROL DE ORDENES\' AND "AREA" NOT LIKE \'NCMR\' AND "AREA" NOT LIKE \'SOPORTE PME\'';
+            $query = 'SELECT DISTINCT "AREA" FROM CTRLSYSTEM.TPM WHERE "AREA" NOT LIKE \'ALMACEN IT\' AND "AREA" NOT LIKE \'KELLY\' AND "AREA" NOT LIKE \'CONTROL DE ORDENES\' AND "AREA" NOT LIKE \'NCMR\' AND "AREA" NOT LIKE \'SOPORTE PME\'  AND "AREA" NOT LIKE \'KELLY XIV\';
         $response =db2_prepare($db2, $query);
       if($response){      
          $result = db2_execute($response);
