@@ -1,8 +1,7 @@
 <?php
-/*Desarrollado por Alejandro Romero Aldrete y Gilberto Bustamante Sanchez*/
+/*Desarrollado por Alejandro Romero Aldrete*/
 session_start();
 // If session variable is not set it will redirect to login page
-$USER = strtoupper($_SESSION['username']);
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: index.php");
   exit;
@@ -20,7 +19,8 @@ if($div != "TOOL"){
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Spare Parts</title>
+    <title>Records</title>
+    
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
     <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
@@ -28,7 +28,7 @@ if($div != "TOOL"){
 <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
     <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
     <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script script type="text/javascript" src="js/filtersttrec.js"></script>
   <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
   <script>
     IBMCore.common.util.config.set({
@@ -41,12 +41,18 @@ if($div != "TOOL"){
   <body id="ibm-com" class="ibm-type">
     <div id="ibm-top" class="ibm-landing-page">
 <nav role="navigation" aria-label="NAV">
-        <div class="ibm-sitenav-menu-container">
+          <div class="ibm-sitenav-menu-container">
             <div class="ibm-sitenav-menu-name">
-                <div id="ibm-home"><a href="trecms.php">IBM®</a></div>
-                <a href="trecms.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
+                <div id="ibm-home"><a href="tmain.php">IBM®</a></div>
+                <a href="tmain.php">&nbsp;&nbsp;&nbsp;&nbsp;CTRLSYSTEM</a></div>
             <div class="ibm-sitenav-menu-list">
-                <ul role="menubar">
+                  <ul role="menubar">
+                    <li role="presentation"><a role="menuitem" href="tassets.php">Asset's</a></li>
+                    <li role="presentation"><a role="menuitem" href="toolrec.php">Records</a></li>
+                    <li role="presentation"><a role="menuitem" class="ibm-highlight"><a role="menuitem" href="tmttos.php">Calendar of Maintenance</a></li>
+                     <li role="presentation"><a role="menuitem" href="ttools.php">Tools</a></li>
+                      <li role="presentation"><a role="menuitem" href="TPMVIEWER.php">TPM</a></li>
+                       <li role="presentation"><a role="menuitem" href="toolspare.php">Spare Parts</a></li>
                     <!-- Optional right side CTA link -->
                     <li class="ibm-sitenav-menu-item-right">
                       <p class="ibm-ind-link ibm-icononly ibm-icononly" style="margin-top: 7px;"><a class="ibm-profile-link"></a></p>
@@ -58,7 +64,6 @@ if($div != "TOOL"){
                       </li>
                 </ul>
             </div>
-             
         </div>
     </nav>
         <!--filters-->      
@@ -67,6 +72,7 @@ if($div != "TOOL"){
             <div id="ibm-content">
               <div id="ibm-content-body">
                 <div id="ibm-content-main">
+<!--ENDFILTERS-->
 <!--ENDFILTERS-->
 <br>
 <br>
@@ -77,22 +83,14 @@ if($div != "TOOL"){
                  <thead>
         <tr>
                  
-                    <th>AREA</th>
-                    <th>BRAND</th>
-                    <th>SN</th>
-                     <th>DATE</th>
-                     <th>TOR</th>
+                     <th>AREA</th>
+                     <th>TYPE</th>
+                     <th>SN</th>
                     
-                    <th>ENC</th>
-                    <th>FIRST</th>
-                    <th>SECOND</th>
-                    <th>THIRD</th>
-                    <th>FOURTH</th>
-                    <th>FIFTH</th>
-                    <th>TYPE</th>
-                    <th>ING</th>
+                     <th>ACCION</th>
+               
                     
-                    <th>SUBMIT</th>
+                     <th>SUBMIT</th>
                    
         </tr>
       </thead>
@@ -100,7 +98,7 @@ if($div != "TOOL"){
                <?php
             require_once('connectsys.php');
             
-            $query = 'SELECT "AREA", "BRAND", "SN", "DATE", "TOR", "ENC", "PRI", "SEC", "TER", "CUA", "QUI", "TYPE" ,"ING"   FROM CTRLSYSTEM.TRECCIE ';
+            $query = 'SELECT "BRAND", "TYPE", "SN", "ACCION"  FROM CTRLSYSTEM.TRECTRANS ';
          
            
 
@@ -117,18 +115,8 @@ if($div != "TOOL"){
             $row[0]  . '</td><td align="center">' .
             $row[1]  . '</td><td align="center">' .
             $row[2]  . '</td><td align="center">' .
-            $row[3]  . '</td><td align="center">' .
-            $row[4]  . '</td><td align="center">' .
-            $row[5]  . '</td><td align="center">' .
-            $row[6]  . '</td><td align="center">' .
-            $row[7]  . '</td><td align="center">' .
-            $row[8]  . '</td><td align="center">' .
-            $row[9]  . '</td><td align="center">' .
-            $row[10] . '</td><td align="center">' .
-            $row[11] . '</td><td align="center">' .
-            $row[12] . '</td>      
-                    
-             <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form>';
+         
+            $row[3]  . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form>';
             echo '</tr>';
               
             } 
