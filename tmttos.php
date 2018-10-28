@@ -115,7 +115,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Checkout Maintenance</h3>
-                <p>>Preventive Maintencance</p>
+                <p>Preventive Maintencance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -135,7 +135,9 @@ if($div != "TOOL"){
                   $datemantto=DateTime::createFromFormat('d/m/y', $fech);
                     $fechatoday = new DateTime();
                     ///extraer mes
-                    $mesmantto= substr($datemantto,2,2);
+                    $mesmantto =  $datemantto->format('d/m/y');
+                    $mesmantto= substr($mesmantto,2,2);
+                    $mestoday=  $fechatoday->format('d/m/y');
                     $mestoday=substr($fechatoday,2,2);
                     echo "mes del manto: "+ $mesmantto+"  mesactual: "+$mestoday;
                     }
