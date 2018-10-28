@@ -81,30 +81,206 @@ if($div != "TOOL"){
 
 <div class="ibm-columns">
   <div class="ibm-col-6-2">
+
+
+  
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Maintenance of Screwdriver</h3>
-                <p>Add,Delete,Modify Transactions</p>
-               <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="treccie.php">Go ahead</a></p>
+               <h3 class="ibm-h3">Maintenance of Screwdrivers</h3>
+                <p>Preventive Maintencance</p>
+                <?php  
+                $use=strtoupper($_SESSION['username']);
+                $exp=False;
+                $abexp=False;
+                $dias2;
+                 require_once('connectsys.php');
+                 $sta = 'SELECT "MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'CALIBRACION ING EQUIPOS'";
+                  $stmt = db2_prepare($db2, $sta);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $fech = $row[0];
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                    $fechatoday = new DateTime();
+                    ///extraer mes
+                    $mesmantto =  $datemantto->format('d/m/y');
+                    $anomantto= substr($mesmantto,6,2);
+                    $mesmantto= substr($mesmantto,3,2);
+
+                    $mestoday=  $fechatoday->format('d/m/y');
+                    $anotoday=substr($mestoday,6,2);
+                    $mestoday=substr($mestoday,3,2);
+                   
+                    if($anomantto < $anotoday){
+                      //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsdmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                    }else{
+                      if($anomantto == $anotoday){
+                        if($mestoday > $mesmantto){
+                             //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsdmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                        }
+                        if($mestoday == $mesmantto){
+                          //about to expire
+                          echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsdmm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                     }
+                      }
+
+                    }
+                    
+                    }//end while
+                    if($exp==False && $abexp==False){
+                      //codigo boton ok
+                echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
+              }  
+                }
+                ?>
             </div>
         </div>
   </div>
   <div class="ibm-col-6-2">
+
+
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Preventive Maintenance</h3>
                 <p>Preventive Maintencance</p>
-               <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="trecmie.php">Go ahead</a></p>
+                <?php  
+                $use=strtoupper($_SESSION['username']);
+                $exp=False;
+                $abexp=False;
+                $dias2;
+                 require_once('connectsys.php');
+                 $sta = 'SELECT "MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MANTENIMIENTO ING EQUIPOS'";
+                  $stmt = db2_prepare($db2, $sta);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $fech = $row[0];
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                    $fechatoday = new DateTime();
+                    ///extraer mes
+                    $mesmantto =  $datemantto->format('d/m/y');
+                    $anomantto= substr($mesmantto,6,2);
+                    $mesmantto= substr($mesmantto,3,2);
+
+                    $mestoday=  $fechatoday->format('d/m/y');
+                    $anotoday=substr($mestoday,6,2);
+                    $mestoday=substr($mestoday,3,2);
+                   
+                    if($anomantto < $anotoday){
+                      //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tpremm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                    }else{
+                      if($anomantto == $anotoday){
+                        if($mestoday > $mesmantto){
+                             //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tpremm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                        }
+                        if($mestoday == $mesmantto){
+                          //about to expire
+                          echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tpremm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                     }
+                      }
+
+                    }
+                    
+                    }//end while
+                    if($exp==False && $abexp==False){
+                      //codigo boton ok
+                echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
+              }  
+                }
+                ?>
             </div>
         </div>
   </div>
   <div class="ibm-col-6-2">
+
+
+
+
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">ESD Maintenance</h3>
                 <p>Preventive Maintencance Assets</p>
-               <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="g4trectrans
-                .php">Go ahead</a></p> <!--g1 los demas son pruebas-->
+               <?php  
+                $use=strtoupper($_SESSION['username']);
+                $exp=False;
+                $abexp=False;
+                $dias2;
+                 require_once('connectsys.php');
+                 $sta = 'SELECT "MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MEDICIONES ESD'";
+                  $stmt = db2_prepare($db2, $sta);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $fech = $row[0];
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                    $fechatoday = new DateTime();
+                    ///extraer mes
+                    $mesmantto =  $datemantto->format('d/m/y');
+                    $anomantto= substr($mesmantto,6,2);
+                    $mesmantto= substr($mesmantto,3,2);
+
+                    $mestoday=  $fechatoday->format('d/m/y');
+                    $anotoday=substr($mestoday,6,2);
+                    $mestoday=substr($mestoday,3,2);
+                   
+                    if($anomantto < $anotoday){
+                      //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tesdmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                    }else{
+                      if($anomantto == $anotoday){
+                        if($mestoday > $mesmantto){
+                             //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tesdmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                        }
+                        if($mestoday == $mesmantto){
+                          //about to expire
+                          echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tesdmm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                     }
+                      }
+
+                    }
+                    
+                    }//end while
+                    if($exp==False && $abexp==False){
+                      //codigo boton ok
+                echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
+              }  
+                }
+                ?>
             </div>
         </div>
   </div>
@@ -112,6 +288,9 @@ if($div != "TOOL"){
 <!--row2-->
 <div class="ibm-columns">
   <div class="ibm-col-6-2">
+
+
+
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Checkout Maintenance</h3>
@@ -136,19 +315,50 @@ if($div != "TOOL"){
                     $fechatoday = new DateTime();
                     ///extraer mes
                     $mesmantto =  $datemantto->format('d/m/y');
+                    $anomantto= substr($mesmantto,6,2);
                     $mesmantto= substr($mesmantto,3,2);
 
                     $mestoday=  $fechatoday->format('d/m/y');
+                    $anotoday=substr($mestoday,6,2);
                     $mestoday=substr($mestoday,3,2);
-                    echo "<p>";
-                    echo "mes del manto:".$mesmantto."  mesactual: ".$mestoday;
-                    echo "</p>";
-                    
+                   
+                    if($anomantto < $anotoday){
+                      //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                    }else{
+                      if($anomantto == $anotoday){
+                        if($mestoday > $mesmantto){
+                             //expirado
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">Expired</a></p>';
+                      $exp=True;
+                       break;
+                        }
+                        if($mestoday == $mesmantto){
+                          //about to expire
+                          echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                     }
+                      }
+
                     }
+                    
+                    }//end while
+                    if($exp==False && $abexp==False){
+                      //codigo boton ok
+                echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
+              }  
                 }
-                ?>            </div>
+                ?>
+                            </div>
         </div>
   </div>
+
+
+
+
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
@@ -190,13 +400,17 @@ if($div != "TOOL"){
                     }
                      if($exp==False && $abexp==False){
                             //codigo boton ok
-                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
                     }  
                 }
                 ?>
             </div>
         </div>
   </div>
+
+
+
+
  <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
@@ -238,7 +452,7 @@ if($div != "TOOL"){
                     }
                      if($exp==False && $abexp==False){
                             //codigo boton ok
-                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-confirm-link">OK</a></p>';
                     }  
                 }
                 ?>
