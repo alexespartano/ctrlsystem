@@ -141,8 +141,8 @@ if($div != "TOOL"){
                     $mestoday=  $fechatoday->format('d/m/y');
                     $mestoday=substr($mestoday,2,2);
                     echo "<p>"
-                    echo "fecha hoy : $fechatoday->format('d/m/y')  fecha manto: $datemantto->format('d/m/y')";
-                    echo "mes del manto:$mesmantto  mesactual: $mestoday";
+                    echo "fecha hoy : ".$fechatoday->format('d/m/y')."  fecha manto: ".$datemantto->format('d/m/y');
+                    echo "mes del manto:".$mesmantto."  mesactual: ".$mestoday;
                     echo "</p>"
                     
                     }
