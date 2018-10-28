@@ -136,10 +136,10 @@ if($div != "TOOL"){
                     $fechatoday = new DateTime();
                     ///extraer mes
                     $mesmantto =  $datemantto->format('d/m/y');
-                    $mesmantto= substr($mesmantto,2,2);
+                    $mesmantto= substr($mesmantto,3,2);
 
                     $mestoday=  $fechatoday->format('d/m/y');
-                    $mestoday=substr($mestoday,2,2);
+                    $mestoday=substr($mestoday,3,2);
                     echo "<p>";
                     echo "mes del manto:".$mesmantto."  mesactual: ".$mestoday;
                     echo "</p>";
