@@ -116,8 +116,49 @@ if($div != "TOOL"){
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Checkout Maintenance</h3>
                 <p>>Preventive Maintencance</p>
-               <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="ttransrec.php">Go ahead</a></p>
-            </div>
+                <?php  
+                $use=strtoupper($_SESSION['username']);
+                $exp=False;
+                $abexp=False;
+                $dias2;
+                 require_once('connectsys.php');
+                 $sta = 'SELECT "MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'REVISION PREVENTIVA'";
+                  $stmt = db2_prepare($db2, $sta);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $fech = $row[0];
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                    $fechatoday = new DateTime();
+                    ///extraer mes
+                    $mesmantto= substr($datemantto,2,2);
+                    $mestoday=substr($fechatoday,2,2);
+                    echo "mes del manto: "+ $mesmantto+"  mesactual: "+$mestoday;
+
+
+/*
+                    if($sim == "+" && $numb < 41){
+                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                      }
+                          if($sim == "-"){
+                              //boton de expirado cortamos ciclo while
+                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">Expired</a></p>';
+                          $exp=True;
+                           break;
+                          }
+                    }
+                     if($exp==False && $abexp==False){
+                            //codigo boton ok
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
+                    }  
+                }*/
+                ?>            </div>
         </div>
   </div>
   <div class="ibm-col-6-2">
@@ -148,20 +189,20 @@ if($div != "TOOL"){
                       $sim =substr($dif,0,1);
                       $numb =substr($dif,1);
                     if($sim == "+" && $numb < 41){
-                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">About To Expired</a></p>';
+                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="temm.php">About To Expired</a></p>';
                             $abexp=True; 
                             break;
                       }
                           if($sim == "-"){
                               //boton de expirado cortamos ciclo while
-                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">Expired</a></p>';
+                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="temm.php">Expired</a></p>';
                           $exp=True;
                            break;
                           }
                     }
                      if($exp==False && $abexp==False){
                             //codigo boton ok
-                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">OK</a></p>';
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
                     }  
                 }
                 ?>
@@ -173,7 +214,46 @@ if($div != "TOOL"){
             <div class="ibm-card__content">
                <h3 class="ibm-h3">SISA Maintenance</h3>
                 <p>Preventive Maintencance</p>
-               <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="trecrp.php">Go ahead</a></p>
+                <?php  
+                $use=strtoupper($_SESSION['username']);
+                $exp=False;
+                $abexp=False;
+                $dias2;
+                 require_once('connectsys.php');
+                 $sta = 'SELECT "MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MANTENIMIENTO SISA'";
+                  $stmt = db2_prepare($db2, $sta);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+                while($row = db2_fetch_array($stmt)){
+                    $fech = $row[0];
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                    $fechatoday = new DateTime();
+                    $difer=date_diff($fechatoday,$datemantto);
+                      $dif= $difer->format("%R%a");
+                      $sim =substr($dif,0,1);
+                      $numb =substr($dif,1);
+                    if($sim == "+" && $numb < 41){
+                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsmm.php">About To Expired</a></p>';
+                            $abexp=True; 
+                            break;
+                      }
+                          if($sim == "-"){
+                              //boton de expirado cortamos ciclo while
+                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsmm.php">Expired</a></p>';
+                          $exp=True;
+                           break;
+                          }
+                    }
+                     if($exp==False && $abexp==False){
+                            //codigo boton ok
+                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
+                    }  
+                }
+                ?>
             </div>
         </div>
   </div>
