@@ -140,9 +140,9 @@ if($div != "TOOL"){
 
                     $mestoday=  $fechatoday->format('d/m/y');
                     $mestoday=substr($mestoday,2,2);
-                    echo "<p>"
+                    echo "<p>";
                     echo "mes del manto:".$mesmantto."  mesactual: ".$mestoday;
-                    echo "</p>"
+                    echo "</p>";
                     
                     }
                 }
