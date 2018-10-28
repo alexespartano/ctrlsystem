@@ -156,8 +156,8 @@ if($div != "TOOL"){
                      if($exp==False && $abexp==False){
                             //codigo boton ok
                       echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
-                    }  
-                }*/
+                    } */ 
+                }
                 ?>            </div>
         </div>
   </div>
