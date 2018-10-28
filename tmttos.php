@@ -140,42 +140,30 @@ if($div != "TOOL"){
                             exit;
                           }
                 while($row = db2_fetch_array($stmt)){
-
-                     date_default_timezone_set('America/Mexico_City');
                     $fech = $row[0];
-                    echo "fech: ".$fech;
-                    
-                    $datemantto= new \DateTime($fech);
-                    echo " ".$datemantto->format('d/m/y');
+                  $datemantto=DateTime::createFromFormat('d/m/y', $fech);
                     $fechatoday = new DateTime();
-                    echo "         ";
-                    echo " hoy:".$fechatoday->format('d/m/y');
-                    $difer=date_diff($datemantto,$fechatoday);
-                    echo "diff: ".$difer->format("%R%a");
-                    echo "<br>";
-              //       $dif= $difer->format("%R%a");
-                //    $sim =substr($dif,0,1);
-                  //  $numb =substr($dif,1);
-                    //echo "simbolo: ".$sim." number:".$numb;
-                 /*   if($numb<=0){
-                          //boton de expirado cortamos ciclo while
-                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">Expired</a></p>';
-                           break;
-                      }else{
-                          if($dias<=40){
-                              echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">About To Expired</a></p>';
-                            $abexp=true; 
+                    $difer=date_diff($fechatoday,$datemantto);
+                      $dif= $difer->format("%R%a");
+                      $sim =substr($dif,0,1);
+                      $numb =substr($dif,1);
+                    if($sim == "+" && $numb < 41){
+                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">About To Expired</a></p>';
+                            $abexp=True; 
                             break;
+                      }
+                          if($sim == "-"){
+                              //boton de expirado cortamos ciclo while
+                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">Expired</a></p>';
+                          $exp=True;
+                           break;
                           }
-                      }*/
-
                     }
-                     if($exp==false || $abexp==false){
+                     if($exp==False && $abexp==False){
                             //codigo boton ok
                       echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="#">OK</a></p>';
                     }  
                 }
-
                 ?>
             </div>
         </div>
