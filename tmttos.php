@@ -137,8 +137,9 @@ if($div != "TOOL"){
                     ///extraer mes
                     $mesmantto =  $datemantto->format('d/m/y');
                     $mesmantto= substr($mesmantto,2,2);
+                    
                     $mestoday=  $fechatoday->format('d/m/y');
-                    $mestoday=substr($fechatoday,2,2);
+                    $mestoday=substr($$mestoday,2,2);
                     echo "mes del manto: "+ $mesmantto+"  mesactual: "+$mestoday;
                     }
                 }
