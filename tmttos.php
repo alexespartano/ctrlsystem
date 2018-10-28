@@ -138,25 +138,7 @@ if($div != "TOOL"){
                     $mesmantto= substr($datemantto,2,2);
                     $mestoday=substr($fechatoday,2,2);
                     echo "mes del manto: "+ $mesmantto+"  mesactual: "+$mestoday;
-
-
-/*
-                    if($sim == "+" && $numb < 41){
-                             echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">About To Expired</a></p>';
-                            $abexp=True; 
-                            break;
-                      }
-                          if($sim == "-"){
-                              //boton de expirado cortamos ciclo while
-                        echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tcmm.php">Expired</a></p>';
-                          $exp=True;
-                           break;
-                          }
                     }
-                     if($exp==False && $abexp==False){
-                            //codigo boton ok
-                      echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link">OK</a></p>';
-                    } */ 
                 }
                 ?>            </div>
         </div>
