@@ -167,7 +167,7 @@ if($div != "TOOL"){
 <!--CONTENT-->
 <div class="ibm-columns ibm-center" data-widget="setsameheight" data-items=".ibm-blocklink">
     <div class="ibm-col-12-12 ibm-center">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block" id="myTable" style="font-size: 10px;">
+    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block"  id="myTable" data-scrollaxis="x" data-widget="datatable" >
             <thead>
                 <tr>
                     <th>AREA</th>
