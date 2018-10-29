@@ -19,7 +19,7 @@ if($div != "TOOL"){
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Records</title>
+    <title>Maintenance</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -74,29 +74,7 @@ if($div != "TOOL"){
                 <div id="ibm-content-main">
 <!--ENDFILTERS-->
 
-<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
-    <div class="ibm-col-1-1 ibm-nospacing">
-        <form action="#" class="ibm-row-form">
-         
-        </form>
-    </div>
-    <div class="ibm-columns">
-    <div class="ibm-col-6-4  ibm-nospacing">
-        <form class="ibm-row-form">
 
- &nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-</div> 
-
-<div class="ibm-col-6-2  ibm-nospacing">
-    <span class="ibm-ind-link ibm-btn-row"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" href="#" onClick="window.location.reload()">Refresh</a><a class="ibm-search-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="filrp()">
-    Search</a><a class="ibm-calculator-link ibm-btn-sec ibm-btn-blue-50">Items:<b id="con"></b></a></span>
-</div>
-</form>
-</div><!--ENDFILTERS-->
 <br>
 <br>
 <br>
@@ -104,34 +82,24 @@ if($div != "TOOL"){
 <!--CONTENT-->
 <div class="ibm-columns ibm-center" data-widget="setsameheight" data-items=".ibm-blocklink">
     <div class="ibm-col-12-12 ibm-center">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block" id="myTable">
+    <table class="ibm-data-table ibm-center ibm-center-block" id="myTable">
             <thead>
                 <tr>
-
-                 
                     <th>AREA</th>
                     <th>BRAND</th>
                     <th>TYPE</th>
                     <th>SN</th>
-                    <th>ING</th>    
+                    <th>DATE</th>    
                     <th>SUBMIT</th>
                 </tr>
             </thead>
             <tbody>
 
+
                 <?php
-
-            $year =  (new \DateTime())->format('Y');
-            $year = substr($year,2);
-            $month =  (new \DateTime())->format('m');
-             $flag = 0;
-             $flag2 = 0;
-
-
-            require_once('connectsys.php');
-            $query = 'SELECT "AREA","BRAND","TYPE","SN","ING" FROM CTRLSYSTEM.TINV ';
-             
-
+                  $use=strtoupper($_SESSION['username']);
+              require_once('connectsys.php');
+            $query = 'SELECT  "AREA","BRAND","TYPE","SN","MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MANTENIMIENTO SISA'";
           $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -140,38 +108,34 @@ if($div != "TOOL"){
                             exit;
                           }
                while($row = db2_fetch_array($stmt)){
-               if($row[3] == strtoupper($_SESSION['username']) ){
-          $mttoyear =  $row[10];
-            $recyear = substr($mttoyear,0,2);
-            $recmonth = substr($mttoyear,3,2);
-            if($recmonth == $value){
-             if ($recyear > $year){
-                    echo '<tr>';            
-                }else{
-    if( $month < $value){
-    echo '<tr>';
-      }
-    
-    if( $month == $value){
-    echo '<tr bgcolor="#efc100">';
-      }
-      if($month > $value){
-         echo '<tr bgcolor="#ff5050">';
-            }
-                  }
-               $idi = $row[3];
-
-            echo '<tr><td align="center" >' .
+                $fech = $row[4];
+                $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                  $fechatoday = new DateTime();
+                  $difer=date_diff($fechatoday,$datemantto);
+                    $dif= $difer->format("%R%a");
+                    $sim =substr($dif,0,1);
+                    $numb =substr($dif,1);
+                    if($sim == "+" && $numb < 41){
+                      //about to expired
+                      echo '<tr bgcolor="#efc100"><form action="tsmmw.php" method="post" class="ibm-row-form"><td align="center" >' .
             $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
-            $row[4] . '<td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
-          
-           }
-         }
-       }
-     }
+            $row[4] . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+
+               }
+                   if($sim == "-"){
+                      //exiperd
+                 echo '<tr bgcolor="#ff5050"><form action="tsmmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+            $row[0] . '</td><td align="center">' .
+            $row[1] . '</td><td align="center">' .
+            $row[2] . '</td><td align="center">' .
+            $row[3] . '</td><td align="center">' .
+            $row[4] . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+                   }
+       }//while end
+     }//if statement end
 
             echo '</table>';
             db2_close($db2);

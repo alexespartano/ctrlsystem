@@ -344,7 +344,6 @@ if($div != "TOOL"){
                       }
 
                     }
-                    
                     }//end while
                     if($exp==False && $abexp==False){
                       //codigo boton ok

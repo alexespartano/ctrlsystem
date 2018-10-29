@@ -19,7 +19,7 @@ if($div != "TOOL"){
     <meta name="viewport" content="width=device-width, initial-scale=1" />      
     <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
     <meta name="geo.country" content="US" />  
-    <title>Records</title>
+    <title>Maintenance</title>
     
     <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
@@ -73,58 +73,88 @@ if($div != "TOOL"){
               <div id="ibm-content-body">
                 <div id="ibm-content-main">
 <!--ENDFILTERS-->
-<!--ENDFILTERS-->
+
+<br>
+<br>
 <br>
 <br>
 <!--CONTENT-->
 <div class="ibm-columns ibm-center" data-widget="setsameheight" data-items=".ibm-blocklink">
     <div class="ibm-col-12-12 ibm-center">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block" id="myTable" style="font-size: 10px;">
-                 <thead>
-        <tr>
-                 
-                     <th>AREA</th>
-                     <th>TYPE</th>
-                     <th>SN</th>
-                    
-                     <th>ACCION</th>
-               
-                    
-                     <th>SUBMIT</th>
-                   
-        </tr>
-      </thead>
+    <table class="ibm-data-table ibm-center ibm-center-block" id="myTable">
+            <thead>
+                <tr>
+                    <th>AREA</th>
+                    <th>BRAND</th>
+                    <th>SN</th>
+                    <th>DATE</th>  
+                    <th>Comments</th>    
+                    <th>SUBMIT</th>
+                </tr>
+            </thead>
             <tbody>
-               <?php
-            require_once('connectsys.php');
-            
-            $query = 'SELECT "BRAND", "TYPE", "SN", "ACCION"  FROM CTRLSYSTEM.TRECTRANS ';
-         
-           
 
-            $stmt=db2_prepare($db2,$query);
-            if($stmt){
-               $result=db2_execute($stmt);
-              if(!$result){
-                echo "Error Messange". db2_stmt_errormsg($stmt);
-              }
-              
-        while($row = db2_fetch_array($stmt)){       
 
-            echo '<tr><form action="g32.php" method="post" class="ibm-row-form" ><td align="center" >' .
-            $row[0]  . '</td><td align="center">' .
-            $row[1]  . '</td><td align="center">' .
-            $row[2]  . '</td><td align="center">' .
-         
-            $row[3]  . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form>';
-            echo '</tr>';
-              
-            } 
+                <?php
+                  $use=strtoupper($_SESSION['username']);
+              require_once('connectsys.php');
+            $query = 'SELECT  "AREA","BRAND","SN","MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'REVISION PREVENTIVA'";
+          $stmt = db2_prepare($db2, $query);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+               while($row = db2_fetch_array($stmt)){
+                $fech = $row[3];
+                $datemantto=DateTime::createFromFormat('d/m/y', $fech);
+                $fechatoday = new DateTime();
+                ///extraer mes
+                $mesmantto =  $datemantto->format('d/m/y');
+                $anomantto= substr($mesmantto,6,2);
+                $mesmantto= substr($mesmantto,3,2);
+
+                $mestoday=  $fechatoday->format('d/m/y');
+                $anotoday=substr($mestoday,6,2);
+                $mestoday=substr($mestoday,3,2);
+               
+                if($anomantto < $anotoday){
+                  //expirado
+                  echo '<tr bgcolor="#ff5050"><form action="tcmmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+            $row[0] . '</td><td align="center">' .
+            $row[1] . '</td><td align="center">' .
+            $row[2] . '</td><td align="center">' .
+            $row[3] . '</td><td><input type="text" name="comm" size="10"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+
+                }else{
+                  if($anomantto == $anotoday){
+                    if($mestoday > $mesmantto){
+                         //expirado
+                         echo '<tr bgcolor="#ff5050"><form action="tcmmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+                         $row[0] . '</td><td align="center">' .
+                         $row[1] . '</td><td align="center">' .
+                         $row[2] . '</td><td align="center">' .
+                         $row[3] . '</td><td><input type="text" name="comm" size="10"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+             
+                
+                    }
+                    if($mestoday == $mesmantto){
+                      //about to expire
+                      echo '<tr bgcolor="#efc100"><form action="tcmmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+                      $row[0] . '</td><td align="center">' .
+                      $row[1] . '</td><td align="center">' .
+                      $row[2] . '</td><td align="center">' .
+                      $row[3] . '</td><td><input type="text" name="comm" size="10"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+          
+                 }
+                  }
+
+                }
+       }//while end
+     }//if statement end
             echo '</table>';
-        }
             db2_close($db2);
-                    
-            
             ?>
             </tbody>
         </table>
@@ -142,9 +172,9 @@ if($div != "TOOL"){
   <div class="ibm-col-12-9"></div>
   <div class="ibm-col-12-3 ibm-right">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="ibm-ind-link"><a class="ibm-email-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-help-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
+    <span class="ibm-ind-link"><a class="ibm-help-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleSmall'); return false;">Contact</a> &nbsp;<a class="ibm-pdf-link ibm-btn-sec ibm-btn-blue-50" href="#">Help/Manual</a></span>
   <div class="ibm-common-overlay  ibm-overlay-alt" data-widget="overlay" id="overlayExampleSmall">
-       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
+       <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admi-link">alexr@mx1.ibm.com. Alejandro Romero Aldrete</a></p>
        <p class="ibm-center ibm-ind-link""><a href="#" class="ibm-admin-link">gilbusta@mx1.ibm.com Gilberto Bustamante Sanchez</a></p>
 </div>
 </div>
