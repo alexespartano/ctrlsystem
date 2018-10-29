@@ -4,6 +4,7 @@
     $dsn      = $details [ "user-provided" ][0][ "credentials" ][ "dsn" ];
     
     $driver = "DRIVER={IBM DB2 ODBC DRIVER};";
+
     
    
 
