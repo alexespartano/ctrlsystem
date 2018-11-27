@@ -86,7 +86,7 @@ if($div != "TOOL"){
   
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Maintenance of Screwdrivers</h3>
+               <h3 class="ibm-h3">Screwdrivers Calibration</h3>
                 <p>Preventive Maintencance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
@@ -293,7 +293,7 @@ if($div != "TOOL"){
 
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Checkout Maintenance</h3>
+               <h3 class="ibm-h3">Preventive Review</h3>
                 <p>Preventive Maintencance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
@@ -361,7 +361,7 @@ if($div != "TOOL"){
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">External Maintenance</h3>
+               <h3 class="ibm-h3">External Calibration</h3>
                 <p>Preventive Maintencance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);

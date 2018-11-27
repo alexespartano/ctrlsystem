@@ -66,13 +66,79 @@ if($div != "TOOL"){
             </div>
         </div>
     </nav>
-        <!--filters-->      
+    
+           <!--filters-->      
         <main role="main" aria-labelledby="ibm-pagetitle-h1">
           <div id="ibm-pcon">
             <div id="ibm-content">
               <div id="ibm-content-body">
-                <div id="ibm-content-main">
+                <div id="ibm-content-main">                                   
+<div class="ibm-columns ibm-seamless ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-blocklink">
+    <div class="ibm-col-1-1 ibm-nospacing">
+        <form action="#" class="ibm-row-form">
+          <p>
+                    <input type="text" size="25" placeholder="Serial Number" id="Input1" autofocus>
+          &nbsp;&nbsp;&nbsp;
+                <select id="Input3" title="SEARCH FOR AREA">
+                <option value="" selected="selected">Area</option>
+   <?php
+        require_once('connectsys.php');
+        $query = "SELECT AREA FROM CTRLSYSTEM.TINV GROUP BY AREA";
+        $stmt = db2_prepare($db2, $query);
+        if($stmt){
+           $result = db2_execute($stmt);
+           if (!$result) {
+                echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                exit;
+           }
+
+         while($row = db2_fetch_array($stmt)){
+                echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
+          }   
+         }
+    ?>
+</select>
+
+
+
+<select  id="Input4" title="SEARCH FOR BRAND">
+  <option value="" selected="selected">Brand</option>
+ <?php
+                    require_once('connectsys.php');
+                    $query = 'SELECT BRAND FROM CTRLSYSTEM.TINV BRAND WHERE  "BRAND" AND "ACCION"='."'CALIBRACION ING EQUIPOS'";
+                             
+
+
+                    $stmt = db2_prepare($db2, $query);
+                    if($stmt){
+                        $result = db2_execute($stmt);
+                        if (!$result) {
+                             echo "exec errormsg: " .db2_stmt_errormsg($stmt);
+                            exit;
+                          }
+
+                while($row = db2_fetch_array($stmt)){
+                    echo '<option value="'. $row[0] .'">'. $row[0] .'</option>';
+                    }   
+                }
+                    ?>
+</select>
+<div class="ibm-col-6-2  ibm-nospacing">
+    <span class="ibm-ind-link ibm-btn-row"><a class="ibm-refresh-link ibm-btn-sec ibm-btn-blue-50" href="#" onClick="window.location.reload()">Refresh</a><a class="ibm-search-link ibm-btn-sec ibm-btn-blue-50" href="#" onclick="filtertool()">Search</a>
+</div>
+            </p>
+        </form>
+    </div>
+    
+   
+
+</form>
+
+
 <!--ENDFILTERS-->
+
+
+
 
 <br>
 <br>
@@ -104,7 +170,7 @@ if($div != "TOOL"){
                 <?php
                   $use=strtoupper($_SESSION['username']);
               require_once('connectsys.php');
-            $query = 'SELECT  "AREA", "BRAND", "SN", "NOM" ,"MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'CALIBRACION ING EQUIPOS'";
+            $query = 'SELECT  "AREA", "BRAND", "SN", "NOM" ,"MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'CALIBRACION ING EQUIPOS'" ;
           $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);

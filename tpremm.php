@@ -89,16 +89,16 @@ if($div != "TOOL"){
                     <th>TYPE</th>
                      <th>SN</th>
                     <th>DATE</th>
-                    <th>STAT</th>
-                    <th>CLEAN / RE-TIGHTEN</th>
-                    <th>CABLE STAT</th>
-                    <th>LUBRICATION</th>
-                    <th>BAND ADJUST</th>
-                    <th>CHANGE THERMAL TAPE & RESIST</th>
-                    <th>JACK 1&2 < 10 Ohm </th>
-                    <th>DRAIN WATER</th>
-                    <th>CONTINUITY PIVOT VS GROUND </th>
-                    <th>PHASE/NEUTRAL VS GROUND MOhm</th>
+                    <th>STAT<br><br><br><br>(1)</th>
+                    <th>CLEAN / RE-TIGHTEN<br><br>(2)</th>
+                    <th>CABLE STAT<br><br><br>(3)</th>
+                    <th>LUBRICATION<br><br><br><br>(4)</th>
+                    <th>BAND ADJUST<br><br><br>(5)</th>
+                    <th>CHANGE THERMAL TAPE & RESIST (6)</th>
+                    <th>JACK 1&2 < 10 Ohm (7)</th>
+                    <th>DRAIN WATER<br><br><br>(8)</th>
+                    <th>CONTINUITY PIVOT VS GROUND <br><br>(9)</th>
+                    <th>PHASE/NEUTRAL VS GROUND MOhm<br><br>(10)</th>
                     <th>SUBMIT</th>
   </tr>
                   </thead>
@@ -135,6 +135,7 @@ if($div != "TOOL"){
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
             $row[4] . '</td>
+                           
             <td align="center"><input type="checkbox" name="c0" value="c0"></td>
             <td align="center"><input type="checkbox" name="c1" value="c1"></td>
             <td align="center"><input type="checkbox" name="c2" value="c2"></td>
@@ -145,7 +146,9 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
+
+          
 
                 }else{
                   if($anomantto == $anotoday){
@@ -167,7 +170,7 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
              
                 
                     }
@@ -189,8 +192,8 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
-          
+            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
+         
                  }
                   }
 

@@ -126,7 +126,7 @@ if($div != "TOOL"){
             $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td><input type="text" name="sample" size="3"></td><td align="center">' .
-            $row[3] . '</td><td><input type="text" name="mesure" size="20"></td><td><input type="text" name="comm" size="10"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            $row[3] . '</td><td><input type="text" name="mesure" size="20"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
 
                 }else{
                   if($anomantto == $anotoday){
@@ -136,7 +136,7 @@ if($div != "TOOL"){
             $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td><input type="text" name="sample" size="3"></td><td align="center">' .
-            $row[3] . '</td><td><input type="text" name="mesure" size="20"></td><td><input type="text" name="comm" size="10"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            $row[3] . '</td><td><input type="text" name="mesure" size="20"></td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
              
                 
                     }
