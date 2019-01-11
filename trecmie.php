@@ -28,7 +28,7 @@ if($div != "TOOL"){
 <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
     <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
     <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
-    <script script type="text/javascript" src="js/filtersttrec.js"></script>
+    <script script type="text/javascript" src="js/filterstrecmie.js"></script>
   <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
   <script>
     IBMCore.common.util.config.set({

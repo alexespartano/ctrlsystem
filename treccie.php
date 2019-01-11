@@ -28,7 +28,7 @@ if($div != "TOOL"){
 <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
     <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
     <script src="https://1.www.s81c.com/common/v18/js/tables.js"></script>
-    <script script type="text/javascript" src="js/filtersttrec.js"></script>
+    <script script type="text/javascript" src="js/filcie.js"></script>
   <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
   <script>
     IBMCore.common.util.config.set({
@@ -167,7 +167,7 @@ if($div != "TOOL"){
 <!--CONTENT-->
 <div class="ibm-columns ibm-center" data-widget="setsameheight" data-items=".ibm-blocklink">
     <div class="ibm-col-12-12 ibm-center">
-    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block" data-scrollaxis="x" data-widget="datatable" id="myTable ">
+    <table class="ibm-data-table ibm-grid ibm-altrows  ibm-center ibm-center-block" data-scrollaxis="x" data-widget="datatable" id="myTable">
             <thead>
                 <tr>
                    <th>AREA</th>
