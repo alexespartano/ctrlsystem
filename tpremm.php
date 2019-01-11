@@ -106,7 +106,7 @@ if($div != "TOOL"){
                 <?php
                   $use=strtoupper($_SESSION['username']);
               require_once('connectsys.php');
-            $query = 'SELECT  "AREA","BRAND","TYPE","SN","MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MANTENIMIENTO ING EQUIPOS'";
+            $query = 'SELECT  "AREA","BRAND","TYPE","SN","MATTO","ID" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'MANTENIMIENTO ING EQUIPOS'";
           $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -129,7 +129,7 @@ if($div != "TOOL"){
                
                 if($anomantto < $anotoday){
                   //expirado
-                  echo '<tr bgcolor="#ff5050"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+                  echo '<tr bgcolor="#ff5050" class=" ibm-bgcolor-red-10"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
             $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
@@ -146,7 +146,7 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
+            <td align="center" class="ibm-ind-link"><input type="hidden" name="identification" value="'.$row[5].'"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
 
           
 
@@ -154,7 +154,7 @@ if($div != "TOOL"){
                   if($anomantto == $anotoday){
                     if($mestoday > $mesmantto){
                          //expirado
-                         echo '<tr bgcolor="#ff5050"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+                         echo '<tr bgcolor="#ff5050"  class=" ibm-bgcolor-red-10"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
             $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
@@ -170,13 +170,13 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
+            <td align="center" class="ibm-ind-link"><input type="hidden" name="identification" value="'.$row[5].'"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
              
                 
                     }
                     if($mestoday == $mesmantto){
                       //about to expire
-                      echo '<tr bgcolor="#efc100"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
+                      echo '<tr bgcolor="#efc100"  class="ibm-bgcolor-yellow-10"><form action="tpremmw.php" method="post" class="ibm-row-form"><td align="center" >' .
                       $row[0] . '</td><td align="center">' .
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
@@ -192,7 +192,7 @@ if($div != "TOOL"){
             <td align="center"><input type="checkbox" name="c7" value="c7"></td>
             <td align="center"><input type="checkbox" name="c8" value="c8"></td>
             <td align="center"><input type="checkbox" name="c9" value="c9"></td>
-            <td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
+            <td align="center" class="ibm-ind-link"><input type="hidden" name="identification" value="'.$row[5].'"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form></tr> ';
          
                  }
                   }

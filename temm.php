@@ -98,7 +98,7 @@ if($div != "TOOL"){
                 <?php
                   $use=strtoupper($_SESSION['username']);
               require_once('connectsys.php');
-            $query = 'SELECT  "AREA","BRAND","TYPE","SN","MATTO" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'CALIBRACION EXTERNA'";
+            $query = 'SELECT  "AREA","BRAND","TYPE","SN","MATTO", "ID" FROM CTRLSYSTEM.TINV WHERE "ING"='."'$use'".' AND "ACCION"='."'CALIBRACION EXTERNA'";
           $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -121,7 +121,7 @@ if($div != "TOOL"){
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
-            $row[4] . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            $row[4] . '</td><td align="center" class="ibm-ind-link"><input type="hidden" name="identification" value="'.$row[5].'"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
 
                }
                    if($sim == "-"){
@@ -131,7 +131,7 @@ if($div != "TOOL"){
             $row[1] . '</td><td align="center">' .
             $row[2] . '</td><td align="center">' .
             $row[3] . '</td><td align="center">' .
-            $row[4] . '</td><td align="center" class="ibm-ind-link"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
+            $row[4] . '</td><td align="center" class="ibm-ind-link"><input type="hidden" name="identification" value="'.$row[5].'"> <button type="submit" id="subutton" class="ibm-btn-sec ibm-btn-transparent " ibm-btn-small "><a href="#" class="ibm-confirm-link"></a></button></td></form> ';
                    }
        }//while end
      }//if statement end

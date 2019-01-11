@@ -34,15 +34,15 @@ if($div != "TOOL"){
   <body id="ibm-com" class="ibm-type">
     <div id="ibm-top" class="ibm-landing-page">
         <main role="main" aria-labelledby="ibm-pagetitle-h1">
-                    <form action="#" method="post" class="ibm-row-form">          
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="ibm-row-form">          
         <div class="ibm-columns ibm-seamless ibm-padding-bottom-0 ibm-pull-quote ibm-h1">
-            <div class="ibm-col-6-6" id="1">
+            <div class="ibm-col-6-6" id=1>
                <p class=" ibm-h1 ibm-center">ARE YOU SURE THAT WANT TO DELETE THE CONTROL INGENIERIA EQUIPOS TABLE? (YOU MUST TO BACKUP THE INFO. BEFORE YOU DELETE )</p>
                 </div>
         </div>
         <div class="ibm-columns ibm-center">
-            <div class="ibm-col-1-1" id="2">
-              <button type="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-btn-small"><a class="ibm-confirm-link  ibm-btn-sec" href="#">Yes</a></button>
+            <div class="ibm-col-1-1" id=2>
+              <button type="submit" name="submit" class="ibm-ind-link ibm-btn-sec ibm-btn-transparent ibm-btn-small"><a class="ibm-confirm-link  ibm-btn-sec" href="#">Yes</a></button>
                 <b class="ibm-ind-link"><a class="ibm-close-link  ibm-btn-pri" href="javascript:close()">No</a></b>
             </div>
         </div> 
@@ -59,15 +59,7 @@ if($div != "TOOL"){
                   exit;
                 } 
             }
-                 echo '<script>$("#" + 1).remove();</script>';
-                 echo '<script>$("#" + 2).remove();</script>';
-
-               echo '<div class="ibm-col-6-6">
-               <p class=" ibm-h1 ibm-center">RECORDS REMOVED</p>
-                </div>
-                   <div class="ibm-col-6-6">
-              <b class="ibm-ind-link"><a class="ibm-confirm-link  ibm-btn-pri" href="javascript:close()">Close Window</a></b>
-                </div>';
+            echo '<script>window.close();</script>';
               }
               ?>
         </main>
