@@ -37,7 +37,7 @@ $SN;
 $ING;
 //query to get the frecuency of mantainance of the item submited
 require_once('connectsys.php');
-$query = 'SELECT "FREC","AREA","BRAND","TYPE","SN","ING" FROM CTRLSYSTEM.TINV WHERE "ID"='.$id;
+$query = 'SELECT "FREC","AREA","BRAND","TYPE","SN","ING","NOM" FROM CTRLSYSTEM.TINV WHERE "ID"='.$id;
 $stmt = db2_prepare($db2, $query);
                     if($stmt){
                         $result = db2_execute($stmt);
@@ -52,10 +52,13 @@ $stmt = db2_prepare($db2, $query);
                     $TYPE = $row[3];
                     $SN = $row[4];
                     $ING = $row[5];
+                    $NOM = $row[6];
                     }   
                 }
 //format of the date for later UPDATE
 $date = new DateTime();
+$date2= $date;
+$date2 = $date2->format('d/m/y');
 date_add($date,date_interval_create_from_date_string(strval($frec)." months"));
 $date =  $date->format('d/m/y');
 ///update for the new date
@@ -71,7 +74,7 @@ if($stmt){
 
 ///INSERT INTO RECORD TABLE OF CHECKOUT MAINTENANCE
 require_once('connectsys.php');
-$query ='INSERT INTO CTRLSYSTEM.TRECCIE ("AREA","BRAND","TYPE","DATE","SN","ING","ENC","PRI","SEC","TER","CUA","QUI","ID") VALUES ('."'$AREA'".','."'$BRAND'".','."'$TYPE'".','."'$date'".','."'$SN'".','."'$ING'".','."'$enc'".','."'$uno'".','."'$dos'".','."'$tres'".','."'$cuatro'".','."'$cinco'".',0)';
+$query ='INSERT INTO CTRLSYSTEM.TRECCIE ("AREA","BRAND","TYPE","DATE","TOR","SN","ING","ENC","PRI","SEC","TER","CUA","QUI","ID") VALUES ('."'$AREA'".','."'$BRAND'".','."'$TYPE'".','."'$date2'".','."'$NOM'".','."'$SN'".','."'$ING'".','."'$enc'".','."'$uno'".','."'$dos'".','."'$tres'".','."'$cuatro'".','."'$cinco'".',0)';
 $stmt = db2_prepare($db2,$query);
 if($stmt){
     $result=db2_execute($stmt);

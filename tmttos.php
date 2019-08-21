@@ -87,7 +87,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Screwdrivers Calibration</h3>
-                <p>Preventive Maintencance</p>
+                <p>Preventive Maintenance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -154,7 +154,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Preventive Maintenance</h3>
-                <p>Preventive Maintencance</p>
+                <p>Preventive Maintenance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -223,7 +223,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">ESD Maintenance</h3>
-                <p>Preventive Maintencance Assets</p>
+                <p>Preventive Maintenance</p>
                <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -294,7 +294,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Preventive Review</h3>
-                <p>Preventive Maintencance</p>
+                <p>Preventive Maintenance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -362,7 +362,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">External Calibration</h3>
-                <p>Preventive Maintencance</p>
+                <p>Preventive Maintenance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -385,7 +385,7 @@ if($div != "TOOL"){
                       $dif= $difer->format("%R%a");
                       $sim =substr($dif,0,1);
                       $numb =substr($dif,1);
-                    if($sim == "+" && $numb < 41){
+                    if($sim == "+" && $numb < 20){
                              echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="temm.php">About To Expired</a></p>';
                             $abexp=True; 
                             break;
@@ -414,7 +414,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">SISA Maintenance</h3>
-                <p>Preventive Maintencance</p>
+                <p>Preventive Maintenance</p>
                 <?php  
                 $use=strtoupper($_SESSION['username']);
                 $exp=False;
@@ -437,7 +437,7 @@ if($div != "TOOL"){
                       $dif= $difer->format("%R%a");
                       $sim =substr($dif,0,1);
                       $numb =substr($dif,1);
-                    if($sim == "+" && $numb < 41){
+                    if($sim == "+" && $numb < 5){
                              echo '<p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="tsmm.php">About To Expired</a></p>';
                             $abexp=True; 
                             break;

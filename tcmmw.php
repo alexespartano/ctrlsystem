@@ -41,6 +41,8 @@ $stmt = db2_prepare($db2, $query);
                 }
 //format of the date for later UPDATE
 $date = new DateTime();
+$date_actual = new DateTime();
+$date_actual = $date->format('d/m/y');
 date_add($date,date_interval_create_from_date_string(strval($frec)." months"));
 $date =  $date->format('d/m/y');
 ///update for the new date
@@ -56,7 +58,7 @@ if($stmt){
 
 ///INSERT INTO RECORD TABLE OF CHECKOUT MAINTENANCE
 require_once('connectsys.php');
-$query ='INSERT INTO CTRLSYSTEM.TRECRP ("AREA","BRAND","NOM","DATE","COMMNETS","ING","ID") VALUES ('."'$AREA'".','."'$BRAND'".','."'$SN'".','."'$date'".','."'$comms'".','."'$ING'".',0)';
+$query ='INSERT INTO CTRLSYSTEM.TRECRP ("AREA","BRAND","NOM","DATE","COMMNETS","ING","ID") VALUES ('."'$AREA'".','."'$BRAND'".','."'$SN'".','."'$date_actual'".','."'$comms'".','."'$ING'".',0)';
 $stmt = db2_prepare($db2,$query);
 if($stmt){
     $result=db2_execute($stmt);

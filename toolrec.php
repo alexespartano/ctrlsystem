@@ -92,8 +92,8 @@ if($div != "TOOL"){
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Record of Screwdriver Maintenance</h3>
-                <p>Preventive Maintencance</p>
+               <h3 class="ibm-h3">Record of Screwdrivers Calibration</h3>
+                <p>Preventive Maintenance</p>
                <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="treccie.php">Go ahead</a></p>
             </div>
         </div>
@@ -102,7 +102,7 @@ if($div != "TOOL"){
     <div class="ibm-card">
             <div class="ibm-card__content">
                <h3 class="ibm-h3">Record of Preventive Maintenance</h3>
-                <p>Preventive Maintencance Assets</p>
+                <p>Preventive Maintenance</p>
                <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="trecmie.php">Go ahead</a></p>
             </div>
         </div>
@@ -113,8 +113,8 @@ if($div != "TOOL"){
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Record of ESD Measures</h3>
-                <p>>Preventive Maintencance</p>
+               <h3 class="ibm-h3">Record of ESD Maintenance</h3>
+                <p>>Preventive Maintenance</p>
                <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="trecms.php">Go ahead</a></p>
             </div>
         </div>
@@ -122,8 +122,8 @@ if($div != "TOOL"){
   <div class="ibm-col-6-2">
     <div class="ibm-card">
             <div class="ibm-card__content">
-               <h3 class="ibm-h3">Record of Preventive Checkout</h3>
-                <p>Preventive Maintencance</p>
+               <h3 class="ibm-h3">Record of Preventive Review</h3>
+                <p>Preventive Maintenance</p>
                <p class="ibm-icon-nolink ibm-linkcolor-default"><a class="ibm-forward-link" href="trecrp.php">Go ahead</a></p>
             </div>
         </div>
